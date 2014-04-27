@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html>
+<head>
+
+	<!-- BOOTSTRAP CDN -->
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script src="./js/bootstrap.min.js"></script>
+
+	<script src="./js/custom.js"></script>
+	<script src="./js/webtoolkit.md5.js"></script>
+</head>
 <body>
+	<script>
+		if (QueryString.h == undefined || !MD5(QueryString.h) == "4cc7d72ab005b7f68f81e78ee451c51a") {
+			window.location.href = "maintenance.html";
+		}
+	</script>
 <h1>Hello World</h1>
 <p>I'm hosted with GitHub Pages.</p>
 </body>
