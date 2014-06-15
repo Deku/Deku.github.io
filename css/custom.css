@@ -45,3 +45,13 @@ ul {
 	margin-right: auto;
 	position: relative !important;
 }
+
+#btn-up {
+	position: fixed;
+	right: -155px;
+	top: 100px;
+	padding: 50px 65px 50px 30px;
+	background-color: rgba(78,162,141,0.2);
+	border-radius: 100px;
+	text-decoration: none;
+}
