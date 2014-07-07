@@ -8,14 +8,17 @@
     <meta name="description" content="Deku's journal of current projects">
     <meta name="author" content="Deku">
 
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
-  <link rel="stylesheet" href="./css/carousel.css">
-  <link rel="stylesheet" href="./css/custom.css">
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/carousel.css">
+  <link rel="stylesheet" href="../../css/custom.css">
 
-  <script src="./js/webtoolkit.md5.js"></script>
-  <script src="./js/jquery-1.11.0.min.js"></script>
-  <script src="./js/bootstrap.min.js"></script>
-  <script src="./js/custom.js"></script>
+  <script src="../../js/webtoolkit.md5.js"></script>
+  <script src="../../js/jquery-1.11.0.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script src="../../js/custom.js"></script>
+  <script src="../../prim/Arista.js"></script>
+  <script src="../../prim/Grafo.js"></script>
+  <script src="../../prim/Prim.js"></script>
 
   <script>
     /* MAINTENANCE */
@@ -49,14 +52,14 @@
               <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                   <li><a href="index.html">Inicio</a></li>
-                  <li><a href="#about">Acerca de m&iacute;</a></li>
-                  <li><a href="#contact">Contacto</a></li>
-                  <li class="active"><a href="#">Chat</a></li>
+                  <li><a href="index.html#about">Acerca de m&iacute;</a></li>
+                  <li><a href="index.html#contact">Contacto</a></li>
+                  <li class="active"><a href="#">Juegos</a></li>
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Proyectos <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                      <li><a href="#vivienda-inteligente">Vivienda Inteligente</a></li>
-                      <li><a href="#endercore">Endercore</a></li>
+                      <li><a href="index.html#vivienda-inteligente">Vivienda Inteligente</a></li>
+                      <li><a href="index.html#endercore">Endercore</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -72,7 +75,17 @@
     ============================= -->
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
-        <iframe ></iframe>
+        <script type="text/javascript">
+            var grafo = [
+                          [0,2,0,6,0],
+                          [2,0,3,8,5],
+                          [0,3,0,0,7],
+                          [6,8,0,0,9],
+                          [0,5,7,9,0]
+                        ];
+
+            Prim(grafo);
+        </script>
       </div>
     </div>
     
