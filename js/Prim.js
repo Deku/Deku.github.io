@@ -1,7 +1,6 @@
 /**
 * Clase Prim
-* @param g: Grafo del cual se obtendra el arbol recubridor minimo
-* @param s: Indice del nodo seleccionado al azar como raiz del arbol
+* @param g: Grafo del cual se obtendra el arbol recubridor minimo representado en forma de matriz de incidencias
 */
 var L = 5;
 
@@ -26,11 +25,12 @@ function Prim(/*grafo*/ g) {
 		for (var v = 0; v < L; v++) {
 			if (g[u][v] && mstSet[v] == false && g[u][v] < key[v]) {
 				parent[v] = u;
-				key[v] = graph[u][v];
+				key[v] = g[u][v];
 			}
 		};
 	};
 
+	print(parent, L, g);
 };
 
 function minKey(key, mstSet) {
@@ -43,6 +43,8 @@ function minKey(key, mstSet) {
 			min_index = v;
 		}
 	};
+
+	return min_index;
 }
 
 function print(parent, n, graph) {

@@ -1,0 +1,9 @@
+timezone: America/Santiago
+encoding: utf-8
+defaults:
+  -
+    scope:
+      path: ""
+      type: "post"
+    values:
+      author: "Deku"
