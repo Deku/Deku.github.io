@@ -1,237 +1,64 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Deku's journal</title>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Deku's journal of current projects">
-    <meta name="author" content="Deku">
+---
 
-	<link rel="stylesheet" href="./css/bootstrap.min.css">
-	<link rel="stylesheet" href="./css/carousel.css">
-  <link rel="stylesheet" href="./css/custom.css">
+layout: default
+title: Inicio
 
-	<script src="./js/webtoolkit.md5.js"></script>
-  <script src="./js/jquery-1.11.0.min.js"></script>
-  <script src="./js/bootstrap.min.js"></script>
-  <script src="./js/custom.js"></script>
+---
 
-  <script>
-    /* MAINTENANCE */
-    //if (QueryString.h == undefined || !MD5(QueryString.h) == "4cc7d72ab005b7f68f81e78ee451c51a") {
-    //  window.location.href = "maintenance.html";
-    //}
-  </script>
-
-</head>
-<body>
-
-  <div class="container">
-
-    <!-- HEADER
-    ===================== -->
+    <!-- ABOUT -->
     <div class="row">
-      <!-- NAVBAR -->
-      <div class="navbar-wrapper">
-        <div class="container">
-          <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#"></a>
-              </div>
-              <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                  <li id="li-index" onclick="setActive(this)"><a href="#">Inicio</a></li>
-                  <li id="li-about" onclick="setActive(this)"><a href="#about">Acerca de m&iacute;</a></li>
-                  <li id="li-contact" onclick="setActive(this)"><a href="#contact">Contacto</a></li>
-                  <li id="li-chat" onclick="setActive(this)"><a href="chat.html">Chat</a></li>
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Proyectos <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#vivienda-inteligente">Vivienda Inteligente</a></li>
-                      <li><a href="#endercore">Endercore</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> <!-- /NAVBAR -->
-      <a id="btn-up">SUBIR</a>
-    </div>
-
-
-    <!-- CONTENT
-    ============================= -->
-    <div class="row">
-      <!-- CAROUSEL -->
-      <div class="row">
-        <div class="col-md-12">
-          <div id="carousel" class="carousel slide" style="margin-top:50px;" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="item active">
-                <img class="img-responsive" src="./img/carousel-1.png" alt="Hi! I'm Deku">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><!-- /CAROUSEL -->
-
-      <!-- ABOUT -->
-      <div id="about" class="row marketing">
-
-        <!-- ABOUT ME -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="./img/about-1.png" alt="n_n">
-          <h2>Acerca de m&iacute;</h2>
-          <p class="text-justify">Hola! Soy Jos&eacute;, m&aacute;s conocido como Deku. Soy un joven programador de Osorno, Chile. Colabor&eacute; hace alg&uacute;n tiempo en battle.cl,
-            pero me independic&eacute; para crear mi propia comunidad. Tengo 22 años (pr&oacute;ximamente 23) y soy el mayor de 2 hermanos.</p>
-        </div><!-- /ABOUT ME -->
-
-        <!-- SKILLS -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="./img/about-2.png" alt="<html>">
-          <h2>Habilidades</h2>
-          <p class="text-justify">Principalmente me dedico a la programaci&oacute;n, aunque me dedico a otras actividades tambi&eacute;n. S&eacute; programar en: <strong>PHP,
-            Java, C++, C# y Javascript</strong>. Por otro lado, me dedico a la gesti&oacute;n de procesos dentro de empresas y a la planificaci&oacute;n
-            estrat&eacute;gica. Todo esto gracias a mi formaci&oacute;n como inform&aacute;tico y administrador.</p>
-        </div><!-- /SKILLS -->
-
-        <!-- INTERESTS -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="./img/about-3.png" alt="pew pew pew">
-          <h2>Intereses</h2>
-          <p class="text-justify">Mi principal pasi&oacute;n son los juegos del estilo RPG, en especial la saga <strong>The Legend of Zelda</strong>. Dentro de los
-            MMORPG he pasado mucho tiempo jugando World of Warcraft, donde disfruto completar el contenido de cada expansi&oacute;n para luego
-            congelar mi cuenta hasta la pr&oacute;xima que salga. Me gusta mucho dibujar y pintar, leer algunos libros que me llamen la atenci&oacute;n
-            y cocinar en mis tiempos libres.</p>
-        </div><!-- /INTERESTS -->
-
-      </div><!-- /ABOUT -->
-
-      <hr class="featurette-divider">
-        
-      <!-- PROJECTS -->
-      <div id="vivienda-inteligente" class="row featurette">
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="./img/project-2.png" alt="Vivienda Inteligente">
-        </div>
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Vivienda Inteligente <span class="small text-muted">Dom&oacute;tica</span></h2>
-          <p class="lead text-justify">Vivienda Inteligente es mi proyecto universitario (futura t&eacute;sis). Se trata de un proyecto de automatizaci&oacute;n de distintos elementos del hogar (dom&oacute;tica) mediante la utilizaci&oacute;n de <a href="http://www.raspberrypi.es/" target="_blank">Raspberry Pi</a> y <a href="http://www.arduino.cc/es/" target="_blank">Arduino</a>.</p>
-        </div>
+      <div class="col-md-3 col-md-offset-1 col-xs-3 col-xs-offset-1">
+        <img class="featurette-image img-responsive" src="{{site.baseurl}}img/deku.png" alt="Contacto">
       </div>
-
-      <hr class="featurette-divider">
-
-      <div id="endercore" class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">EnderCore <span class="small text-muted">Plugin RPG para Bukkit</span></h2>
-          <p class="lead text-justify">EnderCore es un plugin para Bukkit que incluye todas las caracter&iacute;sticas necesarias para un servidor RPG. Est&aacute; inspirado
-            en el proyecto TrinityCore y toma parte de su estructura. Algunas de las caracter&iacute;sticas del plugin son:
-            <ul>
-              <li>Estad&iacute;sticas especiales: Fuerza, Agilidad, Intelecto, Tenacidad, Cr&iacute;tico, Penetraci&oacute;n de armadura y otros.</li>
-              <li>Items personalizados de acuerdo al nivel y la clase.</li>
-              <li>Canales de chat.</li>
-              <li>Sistema de Inteligencia Artificial para mobs.</li>
-              <li>Mobs personalizados y Jefes scripteables.</li>
-              <li>Eventos globales.</li>
-              <li>Sistema de grupos y clanes.</li>
-              <li>Sistema de habilidades y hechizos.</li>
-            </ul>
-          </p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="./img/project-3.png" alt="EnderCore">
-        </div>
-      </div>
-      <!-- /PROJECTS -->
-
-      <hr class="featurette-divider">
-
-      <!-- CONTACT -->
-      <div id="contact" class="row featurette">
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="./img/deku.png" alt="Contacto">
-        </div>
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Contacto</h2>
-          <p class="lead text-justify">
-              <span class="glyphicon glyphicon-user"></span>  <strong>José González</strong><br>
-              <img src="./img/glyphicons_social_39_e-mail.png"></img>  <a href="mailto:maangx@gmail.com">maangx@gmail.com</a><br>
-              <img src="./img/glyphicons_social_31_twitter.png">  </img><a href="http://www.twitter.com/nomore_c" target="_blank">@nomore_c</a><br>
-              <img src="./img/glyphicons_social_08_tumblr.png">  </img><a href="http://zeegp.tumblr.com" target="_blank">zeegp.tumblr.com</a><br>
-          </p>
-        </div>
-      </div><!-- /END CONTACT -->
-    </div>
-    
-
-    <!-- FOOTER
-    ============================= -->
-    <div class="row">
-      <hr class="featurette-divider">
-
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 Deku &middot; <strong>no copy pasterino</strong>
-          &middot; <a href="http://creativecommons.org/licenses/by/3.0/">CC Licence 3.0</a>
-          &middot; <a href="http://glyphicons.com/">Glyphicons</a>
+      <div class="col-md-7 col-xs-7">
+        <p class="text-justify">
+          Hola! Soy Jos&eacute;, m&aacute;s conocido como Deku. Vivo en Osorno, Chile. Me dedico principalmente a la programación web, destacandome en HTML5, CSS3, PHP, .Net C#, y otros. Mi objetivo es aprender las técnicas de accesibilidad, adaptabilidad y usabilidad necesarias para entregar sitios web amigables para el usuario y que puedan ser accedidos desde cualquier plataforma sin perder la calidad.
+          <br><hr><br>
+            <i class="fa fa-envelope-o"></i>&#09;<a href="mailto:maangx@gmail.com">Gmail</a>
+            <i class="fa fa-twitter"></i>&#09;<a href="http://www.twitter.com/nomore_c" target="_blank">Twitter</a>
+            <i class="fa fa-tumblr"></i>&#09;<a href="http://zeegp.tumblr.com" target="_blank">Tumblr</a>
         </p>
-      </footer>
+      </div>
+    </div><!-- /ABOUT -->
+
+    <br><hr><br>
+      
+    <!-- PROJECTS -->
+    <div id="projects" class="row featurette">
+      <div class="col-md-4 col-sm-6">
+        <div class="thumbnail">
+          <img class="img-circle img-img-responsive" src="{{site.baseurl}}img/project-vivienda-inteligente.png" alt="Vivienda Inteligente">
+          <div class="caption">
+            <h3>Vivienda Inteligente <span class="small text-muted">Dom&oacute;tica</span></h3>
+            <p class="text-justify">
+              Vivienda Inteligente es mi proyecto universitario (futura t&eacute;sis). Se trata de un proyecto de automatizaci&oacute;n de distintos elementos del hogar (dom&oacute;tica) mediante la utilizaci&oacute;n de <a href="http://www.raspberrypi.es/" target="_blank">Raspberry Pi</a> y <a href="http://www.arduino.cc/es/" target="_blank">Arduino</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="thumbnail">
+          <img class="img-circle img-responsive" src="{{site.baseurl}}img/project-endercore.png" alt="EnderCore">
+          <div class="caption">
+            <h3>EnderCore <span class="small text-muted">Plugin RPG para Bukkit</span></h3>
+            <p class="text-justify">
+              EnderCore es un plugin para Bukkit que incluye todas las caracter&iacute;sticas necesarias para un servidor RPG. Est&aacute; inspirado en el proyecto <a href="https://github.com/TrinityCore/TrinityCore"><i class="fa fa-github"></i> TrinityCore</a> y toma parte de su estructura.
+            </p>
+            <a class="btn btn-primary" href="https://github.com/Deku/EnderCore"><i class="fa fa-github"></i> Repo en Github</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="thumbnail">
+          <img class="img-circle img-responsive" src="{{site.baseurl}}img/project-egsa-bot.png" alt="Vivienda Inteligente">
+          <div class="caption">
+            <h3>EGSA Bot <span class="small text-muted">Grooveshark Chat Bot</span></h3>
+            <p class="text-justify">EGSA Bot es un bot de chat basado en el trabajo de <a href="https://github.com/UlysseM"><i class="fa fa-github"></i> UlysseM</a>, modificado para agregar funcionalidades de ocio y manejo de la cola de canciones, permitiendo una mejor automatización de las transmisiones en <a href="http://www.grooveshark.com">Grooveshark</a>.
+            </p>
+            <a class="btn btn-primary" href="https://github.com/karb0n13/GSBOT"><i class="fa fa-github"></i> Repo en Github</a>
+            <a class="btn btn-primary" href="http://egsa.github.io"><i class="fa fa-external-link"></i> Sitio Web</a>
+          </div>
+        </div>
+      </div>
     </div>
-
-  </div><!-- /.container -->
-
-  <script type="text/javascript">
-
-    $(document).ready(function() {
-      $(window).scroll(function() {
-          if($(this).scrollTop() > 100){
-              $('#btn-up').stop().animate({
-                  right: '-55px'    
-                  }, 500);
-          }
-          else{
-              $('#btn-up').stop().animate({
-                 right: '-155px'    
-              }, 500);
-          }
-      });
-      $('#btn-up').click(function() {
-          $('html, body').stop().animate({
-             scrollTop: 0
-          }, 500, function() {
-             $('#btn-up').stop().animate({
-                 right: '-155px'    
-             }, 500);
-          });
-      });
-    });
-
-    /* Visual stuff */
-    var activeElement = "li-index";
-
-    $(document).ready(function() {
-      setActive({id: activeElement});
-    });
-
-    function setActive(obj) {
-      $(activeElement).removeClass("active");
-
-      activeElement = "#" + obj.id;
-
-      $(activeElement).addClass("active");
-    }
-  </script>
-
-</body>
-</html>
+    <!-- /PROJECTS -->

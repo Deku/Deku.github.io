@@ -1,6 +1,7 @@
 html,
 body {
   height: 100%;
+  font-family: "Trebuchet MS", Trebuchet, Helvetica, Arial;
 }
 body {
   text-align: center;
@@ -12,8 +13,11 @@ ul {
 	text-align: left;
 }
 
-.jumbotron {
-	background-color: rgba(238, 238, 238, 0.86);
+img-jumbotron {
+	margin-left: auto;
+	margin-right: auto;
+	height: 10em;
+	width: 100%;
 }
 
 .maintenance-bg {
@@ -51,7 +55,7 @@ ul {
 	position: fixed;
 	right: -155px;
 	top: 100px;
-	padding: 50px 65px 50px 30px;
+	padding: 30px 65px 30px 30px;
 	background-color: rgba(78,162,141,0.2);
 	border-radius: 100px;
 	text-decoration: none;

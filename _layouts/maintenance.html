@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Deku's journal</title>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Deku's journal of current projects">
+  <meta name="author" content="Deku">
+
+	<link rel="stylesheet" href="{{site.baseurl}}css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{site.baseurl}}css/deku-custom.css">
+
+	<script src="{{site.baseurl}}js/webtoolkit.md5.js"></script>
+  <script src="{{site.baseurl}}js/jquery-1.11.0.min.js"></script>
+  <script src="{{site.baseurl}}js/bootstrap.min.js"></script>
+  <script src="{{site.baseurl}}js/deku-custom.js"></script>
+
+  <script>
+    /* MAINTENANCE */
+    //if (QueryString.h == undefined || !MD5(QueryString.h) == "4cc7d72ab005b7f68f81e78ee451c51a") {
+    //  window.location.href = "maintenance.html";
+    //}
+  </script>
+
+</head>
+<body>
+
+  <!-- CONTENT
+  ============================= -->
+  <div class="container maintenance-bg" role="main" style="padding-top:50px;">
+
+    {{ content }}
+
+  </div>
+  
+
+  <!-- FOOTER
+  ============================= -->
+  <footer>
+    <hr class="featurette-divider">
+    <p class="pull-right"><a href="#">Back to top</a></p>
+    <p>&copy; 2014 Deku &middot; <strong>no copy pasterino</strong>
+      &middot; <a href="http://creativecommons.org/licenses/by/3.0/">CC Licence 3.0</a>
+      &middot; <a href="http://glyphicons.com/">Glyphicons</a>
+    </p>
+  </footer>
+
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+      $(window).scroll(function() {
+          if($(this).scrollTop() > 100){
+              $('#btn-up').stop().animate({
+                  right: '-55px'    
+                  }, 500);
+          }
+          else{
+              $('#btn-up').stop().animate({
+                 right: '-155px'    
+              }, 500);
+          }
+      });
+      $('#btn-up').click(function() {
+          $('html, body').stop().animate({
+             scrollTop: 0
+          }, 500, function() {
+             $('#btn-up').stop().animate({
+                 right: '-155px'    
+             }, 500);
+          });
+      });
+    });
+
+    /* Visual stuff */
+    var activeElement = "li-index";
+
+    $(document).ready(function() {
+      setActive({id: activeElement});
+    });
+
+    function setActive(obj) {
+      $(activeElement).removeClass("active");
+
+      activeElement = "#" + obj.id;
+
+      $(activeElement).addClass("active");
+    }
+  </script>
+
+</body>
+</html>
