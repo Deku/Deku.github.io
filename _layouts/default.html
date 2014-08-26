@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Deku's journal</title>
+	<title>{% if page.title %} {{ page.title }} | {% endif %} Deku's journal</title>
 	<meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,68 +15,77 @@
 	<script src="{{site.baseurl}}js/webtoolkit.md5.js"></script>
   <script src="{{site.baseurl}}js/jquery-1.11.0.min.js"></script>
   <script src="{{site.baseurl}}js/bootstrap.min.js"></script>
-  <script src="{{site.baseurl}}js/deku-custom.js"></script>
 
+  <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+  {% if site.maintenance == "true" %}
   <script>
     /* MAINTENANCE */
-    //if (QueryString.h == undefined || !MD5(QueryString.h) == "4cc7d72ab005b7f68f81e78ee451c51a") {
-    //  window.location.href = "maintenance.html";
-    //}
+    if (QueryString.h == undefined || !MD5(QueryString.h) == "4cc7d72ab005b7f68f81e78ee451c51a") {
+      window.location.href = "maintenance.html";
+    }
   </script>
+  {% endif %}
 
 </head>
 <body>
 
   <!-- HEADER
   ===================== -->
-  <header>
-    <!-- NAVBAR -->
-    <div class="navbar-wrapper">
+  <header id="header" role="banner">
+    <div class="main-nav">
       <div class="container">
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
+        <div class="header-top">
+          <div class="pull-right social-icons">
+            <a href="http://www.twitter.com/nomore_c"><i class="fa fa-twitter"></i></a>
+            <a href="https://github.com/Deku"><i class="fa fa-github"></i></a>
+            <a href="mailto:maangx@gmail.com"><i class="fa fa-google"></i></a>
+            <a href="http://zeegp.tumblr.com"><i class="fa fa-tumblr"></i></a>
+          </div>
+        </div>
+        <div class="row">             
+          <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#"></a>
-            </div>
-            <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li><a href="{{site.baseurl}}#">Inicio</a></li>
-                <li><a href="{{site.baseurl}}games/">Juegos</a></li>
-                <li><a href="{{site.baseurl}}#projects">Proyectos</a></li>
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>          
+          </div>
+          <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">                 
+                  <li class="scroll active"><a href="{{site.baseurl}}#">Inicio</a></li>
+                  <li class="scroll"><a href="{{site.baseurl}}games/">Juegos</a></li>                         
+                  <li class="scroll"><a href="{{site.baseurl}}#projects">Proyectos</a></li>     
               </ul>
-            </div>
           </div>
         </div>
       </div>
     </div> <!-- /NAVBAR -->
-    <a id="btn-up">Subir</a>
   </header>
 
 
   <!-- CONTENT
   ============================= -->
-  <div class="container" role="main" style="padding-top:50px;">
-
-    {{ content }}
-
-  </div>
+  {{ content }}
   
 
   <!-- FOOTER
   ============================= -->
-  <footer>
-    <hr class="featurette-divider">
-    <p class="pull-right"><a href="#">Back to top</a></p>
-    <p>&copy; 2014 Deku &middot; <strong>no copy pasterino</strong>
-      &middot; <a href="http://creativecommons.org/licenses/by/3.0/">CC Licence 3.0</a>
-      &middot; <a href="http://glyphicons.com/">Glyphicons</a>
-    </p>
+  <footer id="footer">
+    <div class="container">
+      <p class="pull-right">
+        <a href="#">Back to top</a>
+      </p>
+      <p class="pull-left">
+        &copy; 2014 Deku &middot; no copy pasterino<br>
+        <a href="http://creativecommons.org/licenses/by/3.0/">CC Licence 3.0</a>
+        &middot; <a href="http://glyphicons.com/">Glyphicons</a>
+      </p>
+    </div>
   </footer>
 
   <script type="text/javascript">

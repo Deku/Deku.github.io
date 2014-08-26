@@ -1,5 +1,7 @@
+baseurl: /
 timezone: America/Santiago
 encoding: utf-8
+maintenance: "true"
 defaults:
   -
     scope:
