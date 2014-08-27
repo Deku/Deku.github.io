@@ -131,6 +131,18 @@ header {
 	padding: 35px 0;
 }
 
+.note {
+  color: #212121;
+  font-size: 0.2em;
+  position: absolute;
+  bottom: 3em;
+  -webkit-transform: rotate(346deg);
+  -moz-transform: rotate(346deg);
+  -o-transform: rotate(346deg);
+  transform: rotate(346deg);
+  writing-mode: lr-tb;
+}
+
 /**
  * MAINTENANCE
  */
