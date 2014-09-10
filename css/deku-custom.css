@@ -6,12 +6,12 @@
  */
 
 body {
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Dosis', 'Helvetica Neue', Arial,'sans-serif';
   font-size: 17px;
 }
 .btn {
   border-radius: 0;
-  font-family: 'Yanone Kaffeesatz','sans-serif';
+  font-family: 'Yanone Kaffeesatz', 'Helvetica Neue', Arial,'sans-serif';
   font-size: 20px;
   padding: 9px 23px;
 }
@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 h2 {
-  font-size: 36px
+  font-size: 2.1em;
 }
 .media>.pull-left{
   margin-right: 20px;
@@ -162,12 +162,14 @@ h2 {
   overflow: hidden;
 }
 #main-slider img {
-  width: 100%
+  width: 100%;
+  z-index: 1;
 }
 #main-slider .carousel-caption {
   background: none repeat scroll 0 0 #000000;
   bottom: 14%;
   float: left;
+  position: absolute;
   left: 0;
   opacity: 0.8;
   padding:10px 60px 35px;
@@ -175,6 +177,7 @@ h2 {
   text-transform: uppercase;
   color: #fff;
   text-align: left;
+  z-index:999;
 }
 #main-slider .carousel-caption h2 {  
   font-size: 38px;
@@ -187,8 +190,7 @@ h2 {
   font-size: 22px;
   color: #2da1c5
 }
-#main-slider 
-.carousel-caption a:hover {
+#main-slider .carousel-caption a:hover {
   color: #2588a6
 }
 #main-slider .carousel-caption a:hover i {
@@ -458,4 +460,23 @@ h2 {
 }
 #player {
 	margin: 10px auto 20px auto;
+}
+
+/************************************
+**********RESPONSIVE CSS*************
+************************************/
+@media (max-width: 800px) {
+  #main-slider .carousel-caption {
+    float: left;
+    position: static;
+    padding:10px 60px 35px;
+    opacity: 1;
+  }
+  #main-slider .carousel-caption h2 {  
+    font-size: 24px;
+   
+  }
+  #main-slider .carousel-caption h4 {
+    font-size: 17px;
+  }
 }
