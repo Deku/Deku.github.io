@@ -217,6 +217,32 @@ h2 {
   border: 1px solid #fff;
 }
 
+.links {
+  list-style:none;
+}
+
+.links li {
+  width: 100%;
+  padding: 0.5em;
+}
+
+.links li img {
+  width: 4em;
+  height: auto;
+  margin: 10px;
+  vertical-align: middle;
+  display: block;
+}
+
+.links li .link-text {
+  overflow: hidden;
+  margin-left: 5em;
+}
+
+.links li h4 {
+  font-weight: bold;
+}
+
 .the-end {
   font-family: 'PressStart2P';
   font-size: 1.3em;
@@ -264,74 +290,6 @@ h2 {
 #about .btn-primary:hover {
   background-color: #126d55
 }
-
-
-
-/*************************
-******Twitter CSS****
-**************************/
-
-#twitter {
-  background-color: #ecedef;
-  background-image: url("../images/twitter-bg.jpg");
-  background-position: center bottom;
-  background-size: cover;
-  background-repeat:no-repeat;
-  position: relative;
-  padding: 95px 0 90px;
-  overflow: hidden;
-}
-
-.twit {
-  position: absolute;
-  left: 0;
-  top:-42%;
-}
-
-#twitter-feed .item {
-  text-align: center;
-}
-
-#twitter-feed .item img {
-  display: inline-block;
-  width: 78px;
-  height: 78px;
-  border-radius: 50%;
-  background-color: #c5c8ce;
-  padding: 5px;
-  margin-bottom: 30px;
-}
-
-#twitter-feed .item a, 
-#twitter-feed .item p { 
-  font-size: 24px;
-  font-weight: 300;
-  font-family: 'Yanone Kaffeesatz','sans-serif';
-}
-
-#twitter-feed .item p {
-  color: #3D3D3D;
-}
-
-#twitter-feed .item a {
-  color:#00c3ff;
-}
-
-.twitter-control-left, 
-.twitter-control-right {
-  position: absolute;
-  color: #00c3ff;
-  top: 59%;
-  font-size: 24px
-}
-
-.twitter-control-left {
-  left: 0;
-}
-
-.twitter-control-right {
-  right:0;
-} 
 
 /*************************
 ******Contact CSS****
