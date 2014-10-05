@@ -1,5 +1,5 @@
 /**
-* Clase Prim
+* Función Prim
 * @param g: Grafo del cual se obtendra el arbol recubridor minimo representado en forma de matriz de incidencias
 */
 var L = 5;
@@ -48,10 +48,10 @@ function minKey(key, mstSet) {
 }
 
 function print(parent, n, graph) {
-	var result = "Edge             Weight\n";
+	var result = "Edge             Weight<br>";
 	for (var i = 1; i < L; i++) {
-		result += parent[i] + " - " + i + "        " + graph[i][parent[i]]+ "\n";
+		result += parent[i] + " - " + i + "        " + graph[i][parent[i]]+ "<br>";
 	};
 
-	alert(result);
+	$('#result').append(result);
 }

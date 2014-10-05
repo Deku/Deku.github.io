@@ -245,9 +245,16 @@ h2 {
 
 .the-end {
   font-family: 'PressStart2P';
-  font-size: 1.3em;
   color: #000;
   text-align: center;
+}
+
+section.header {
+  height: 300px;
+}
+
+section.header .col-md-12 {
+  padding-top: 200px;
 }
 
 /*************************
