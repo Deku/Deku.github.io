@@ -1,0 +1,35 @@
+---
+
+layout: default
+title: Demo colisión Javascript
+
+---
+
+	<section class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Space Game - Juego Javascript</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<p>
+						Utiliza las flechas de dirección (arriba, abajo, izquierda, derecha) para mover la nave espacial y llegar a la base azul sin chocar con ningún asteroide (rojos).
+					<p>
+          <button type="button" class="btn btn-primary btn-sm" onclick="canvasSpaceGame('reset')">Reiniciar</button>
+				</div>
+				<div class="col-md-10 col-md-offset-1">
+					<canvas id="movements" width="300" height="30"></canvas><br>
+					<canvas id="game" width="800" height="600"></canvas>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script type="text/javascript" src="init.js"></script>

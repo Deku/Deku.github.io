@@ -385,10 +385,6 @@ section.header .col-md-12 {
 
 #footer {
   background-color: #212121;
-  background-image: url("../images/footer-bg.jpg");
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
   color: #FFFFFF;
   font-size: 20px;
   padding: 35px 0;

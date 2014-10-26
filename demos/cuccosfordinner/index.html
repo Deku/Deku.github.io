@@ -1,0 +1,34 @@
+---
+
+layout: default
+title: Cuccos for Dinner
+
+---
+
+<section class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Cuccos for Dinner - Javascript Shooter</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <link href="normalize.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="{{site.baseurl}}js/createjs-2013.12.12.min.js"></script>
+    <script type="text/javascript" src="init.js"/></script>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <p>
+                    El viejo Smith te ha pedido que captures algunos cucco para la cena. Dispara para ganar puntos, pero cuidado, la velocidad del cucco aumentará cada vez que aciertes. Si fallas, perderás 10 puntos y el cucco aumentará levemente su velocidad.
+                </p>
+            </div>
+            <div class="col-md-10 col-md-offset-1">
+                <canvas id="game"></canvas> 
+            </div>
+        </div>
+    </div>
+</section>
