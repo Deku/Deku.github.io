@@ -4,22 +4,38 @@ layout: default
 title: Prim
 
 ---
-
-  <script src="{{site.baseurl}}js/Prim.js"></script>
-
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <div id="result"></div>
-      <script type="text/javascript">
-          var grafo = [
-                        [0,2,0,6,0],
-                        [2,0,3,8,5],
-                        [0,3,0,0,7],
-                        [6,8,0,0,9],
-                        [0,5,7,9,0]
-                      ];
-
-          Prim(grafo);
-      </script>
+  
+  <section class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Algoritmo de Prim -WIP-</h2>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <script src="Prim.js"></script>
+          <p>
+            Implementación en Javascript del Algoritmo de Prim. Sin terminar. Nada interesante que ver aquí.
+          <p>
+          <div id="result"></div>
+          <script type="text/javascript">
+              var grafo = [
+                            [0,2,0,6,0],
+                            [2,0,3,8,5],
+                            [0,3,0,0,7],
+                            [6,8,0,0,9],
+                            [0,5,7,9,0]
+                          ];
+
+              Prim(grafo);
+          </script>
+        </div>
+      </div>
+    </div>
+  </section>
