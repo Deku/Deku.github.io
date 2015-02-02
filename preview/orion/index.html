@@ -3,16 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Local completamente rústico ubicado en Puerto Cisnes, XI región, ofrecemos cervezas artesanales de la región , especialidad en pescados, mariscos y carnes, además contamos con una van para para realizar tour hacia parques ventisqueros y senderos de nuestra comuna.">
-    <meta name="author" content="Orion Pub-Restaurant">
-    <title>Orion Pub-Restaurant - Puerto Cisnes, Chile</title>
+    <meta name="description" content="Orion Pub y Restaurant ubicado en Puerto Cisnes, XI región de Aysén, te ofrece un local completamente rústico, ofrecemos cervezas artesanales de la región, especialidad en pescados, mariscos y carnes, además contamos con una van para para realizar tour hacia parques ventisqueros y senderos de nuestra comuna.">
+    <meta name="author" content="Orion Pub - Restaurant">
+    <title>Orion Pub - Restaurant :: Puerto Cisnes, Chile</title>
 	
     <!-- Social meta tags -->
-    <meta property="og:title" content="Orion Pub-Restaurant"/>
+    <meta property="og:title" content="Orion Pub - Restaurant"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="http://www.orion-restaurant.com"/>
+    <meta property="og:url" content="http://www.restaurantorion.com"/>
     <meta property="og:image" content="http://www.davidsandoval.cl/web/components/com_joomgallery/img_originals/puerto_cisnes_7/puerto_cisnes_20100909_1235440173.jpg"/>
-    <meta property="og:description" content="Local completamente rústico ubicado en Puerto Cisnes, XI región, ofrecemos cervezas artesanales de la región , especialidad en pescados, mariscos y carnes, además contamos con una van para para realizar tour hacia parques ventisqueros y senderos de nuestra comuna."/>
+    <meta property="og:description" content="Orion Pub y Restaurant ubicado en Puerto Cisnes, XI región de Aysén, te ofrece un local completamente rústico, ofrecemos cervezas artesanales de la región, especialidad en pescados, mariscos y carnes, además contamos con una van para para realizar tour hacia parques ventisqueros y senderos de nuestra comuna."/>
 
 	<!-- core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -148,7 +148,7 @@
                         <div class="feature-wrap">
                             <i class="fa fa-cutlery"></i>
                             <h2>... ricos platos.</h2>
-                            <p>Nuestra especialidad son los pescados, mariscos y carnes. Ven y prueba unos platos que te dejarán con ganas de más.</p>
+                            <p>Nuestra especialidad son los <span itemprop="servesCuisine">pescados, mariscos y carnes</span>. Ven y prueba unos platos que te dejarán con ganas de más.</p>
                         </div>
                     </div><!--/.col-md-4-->
 
@@ -419,14 +419,27 @@
                     <div class="col-sm-5 map-content">
                         <address>
                             <h5>Dirección</h5>
-                            <p>Séptimo de línea esquina Rafael Sotomayor (a 2 cuadras de la Plaza de Armas)<br>
-                            Puerto Cisnes, XI región</p>
+                            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                                <span itemprop="streetAddress">Séptimo de línea esquina Rafael Sotomayor</span> (a 2 cuadras de la Plaza de Armas)<br/>
+                                <span itemprop="addressLocality">Puerto Cisnes</span>,<br>
+                                <span itemprop="addressRegion">XI región de Aysén</span>, <br>
+                                <span itemprop="addressCountry">Chile</span>
+                            </p>
                             <h5>Teléfono de contacto</h5>
-                            <p>Celular: 76410867 </p>
+                            <p>
+                                Celular: 
+                                <span itemprop="telephone">76410867</span>
+                            </p>
                             <h5>Correo de contacto</h5>
-                            <p>Reservas al correo: gonzaloaguila@hotmail.cl</p>
+                            <p>
+                                Reservas al correo: 
+                                <span itemprop="email">gonzaloaguila@hotmail.cl</span>
+                            </p>
                             <h5>Perfil de Facebook</h5>
-                            <p><a href="https://www.facebook.com/profile.php?id=100004861005699" target="_blank">Orion Pub-Restaurant</a></p>
+                            <p>
+                                <a href="https://www.facebook.com/profile.php?id=100004861005699" target="_blank">
+                                <span itemprop="name">Orion Pub - Restaurant</span></a>
+                            </p>
                         </address>
                     </div>
                 </div>
@@ -438,7 +451,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2013 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>. All Rights Reserved.
+                    Tema "Corlate" de &copy; <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>.
                 </div>
                 <div class="col-sm-6">
                     <p class="pull-right">
