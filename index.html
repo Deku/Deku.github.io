@@ -4,77 +4,271 @@ layout: default
 title: Inicio
 
 ---
-    <!-- ABOUT -->
-    <section id="home">
-      <div id="main-slider" class="carousel slide">
-        <div class="carousel-inner">
+    <!-- main slider start -->
+  <section id="slider" class="slider">
+    <div class="overlay"></div>
+    <div id="main-slide" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators visible-lg visible-md">
+          <li data-target="#main-slide" data-slide-to="0" class="active"></li>
+          <li data-target="#main-slide" data-slide-to="1"></li>
+          <li data-target="#main-slide" data-slide-to="2"></li>
+      </ol><!--/ Indicators end-->
+      
+      <!-- Carousel inner -->
+      <div class="carousel-inner">
           <div class="item active">
-            <img class="img-responsive" src="{{site.baseurl}}img/bg-deku.png" alt="Welcome">
-            <div class="carousel-caption">
-              <h4>
-                Hola! Soy Jos&eacute;, m&aacute;s conocido como Deku. Vivo en Osorno, Chile. Me dedico principalmente a la programación web, destacándome en HTML5, CSS3, PHP, .Net C#, y otros. Mi objetivo es aprender las técnicas de accesibilidad, adaptabilidad y usabilidad necesarias para entregar sitios web amigables para el usuario y que puedan ser accedidos desde cualquier plataforma sin perder la calidad.
-              </h4>
+            <img class="img-responsive" src="{{site.baseurl}}images/slider/bg6.jpg" alt="slider">
+                    <div class="slider-content">
+                      <div class="col-md-12 text-center">
+                        <div class="slider-text italic">
+                            <h2 class="animated2">"No documentes el problema; arréglalo"</h2>
+                            <h3 class="animated3">- Atli Björgvin Oddsson</h3>
+                            <h5 class="animated6">Programador</h5>
+                            <a href="#profile" class="page-scroll animated4" ><i class="fa fa-angle-down"></i></a>
+                          </div>
+                      </div>
+                    </div>
+          </div><!--/ Carousel item end -->
+
+          <div class="item">
+            <img class="img-responsive" src="{{site.baseurl}}images/slider/bg2.jpg" alt="slider">
+                    <div class="slider-content">
+                        <div class="col-md-12 text-center">
+                            <h2 class="animated4">"Nunca confíes en un ordenador que no puedas lanzar por una ventana"</h2>
+                            <h3 class="animated5">- Steve Wozniak</h3> 
+                            <h5 class="animated2">Co-fundador de Apple</h5>
+                            <a href="#profile" class="page-scroll animated6"><i class="fa fa-angle-down"> </i></a>     
+                        </div>
+                    </div>
+          </div><!--/ Carousel item end -->
+          
+          <div class="item">
+            <img class="img-responsive" src="{{site.baseurl}}images/slider/bg4.jpg" alt="slider">
+                    <div class="slider-content">
+                      <div class="col-md-12">
+                        <div class="slider-text">
+                            <h2 class="animated4">"Cuanto más sabes, más te das cuenta de que no sabes nada"</h2>
+                            <h3 class="animated5">- Sócrates</h3> 
+                            <h5 class="animated2">Filósofo griego</h5>
+                          </div>
+                         <a href="#profile" class="page-scroll animated6"><i class="fa fa-angle-down"> </i></a> 
+                      </div>
+                    </div>
+          </div><!--/ Carousel item end -->
+      </div><!-- Carousel inner end-->
+      
+      <!-- Controllers -->
+      <a class="left carousel-control" href="#main-slide" data-slide="prev">
+          <span><i class="fa fa-angle-left"></i></span>
+      </a>
+      <a class="right carousel-control" href="#main-slide" data-slide="next">
+          <span><i class="fa fa-angle-right"></i></span>
+      </a>
+    </div><!--/ Carousel end --> 
+
+  </section><!-- main slider end -->
+
+    <!-- ABOUT section -->
+    <section id="profile" class="profile">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="header-desc text-center">
+            <div class="header-content">
+              <h3 class="big-title">Perfil</h3>
+              <span>Acerca de mi</span>
             </div>
           </div>
         </div>
       </div>
-    </section><!-- /ABOUT -->
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInLeft" >
+          <div class="pro-desc">
+            <h3 class="sub-title">José González</h3>
+            <h5><i>Desarrollador C# .NET / PHP</i></h5>
+            <p>¡Hola! Mi nombre es José, más conocido en el mundo virtual como Deku, y soy un desarrollador de software. Me enfoco
+              en el desarrollo web, principalmente trabajando en proyectos de web services bajo plataforma .NET y PHP. Me gusta
+              desarrollar sitios aplicando un diseño adaptable (RWD) y los principios de la usabilidad.
+            </p>
+            <figure>
+              <div class="deku-sprite"></div>
+            </figure>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInRight">
+          <div class="pro-info">
+            <h3 class="sub-title">Info Personal</h3>
+            <div class="pro-list m20">
+              <div><span>Nombre :</span> José González</div>
+              <div><span>Edad: :</span> 23 años</div>
+              <div><span>Email :</span> maangx@gmail.com</div>
+              <div><span>Github :</span> <a href="https://github.com/Deku">github.com/Deku</a></div>
+            </div>
+            <ul class="socail-list list-inline">
+              <li><a href="https://www.facebook.com/zeegp"><i class="fa fa-facebook wow fadeInLeft" data-wow-delay=".2s"></i></a></li>
+              <li><a href="https://twitter.com/nomore_c"><i class="fa fa-twitter wow fadeInLeft" data-wow-delay=".4s"></i></a></li>
+              <li><a href="https://github.com/Deku"><i class="fa fa-github wow fadeInLeft" data-wow-delay=".6s"></i></a></li>
+              <li><a href="http://cl.linkedin.com/in/josegonzaleza"><i class="fa fa-linkedin wow fadeInLeft" data-wow-delay=".8s"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInRight">
+          <div class="pro-pic">
+            <img src="{{site.baseurl}}images/profile.jpg" alt="profile-pic" class="img-circle img-responsive">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- ABOUT section end -->
 
-    <!-- PROJECTS -->
-    <section id="projects">
+  <!-- PROJECTS -->
+  <section id="projects">
       <div class="container">
         <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            <div class="text-centered">
-              <h2>Proyectos</h2>
-              <p>
-                Proyectos e ideas en los que me encuentro trabajando actualmente
-              </p>
+          <div class="col-md-12">
+            <div class="header-desc text-center">
+              <div class="header-content">
+                <h3 class="big-title">Proyectos</h3>
+                <span>Ejemplos de mi trabajo</span>
+              </div>
+              <p>La mayoría de estos proyectos son basados en tutoriales donde he querido aprender/demostrar alguna herramienta. 
+                Espero que te resulten interesantes.</p>
             </div>
           </div>
         </div>
+
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class="carousel slide" id="portfolio-carousel">
+                  <div class="carousel-inner">
+                      <div class="item  active">
+                        <div class="row">
+                          <!-- EGSA BOT -->
+                          <div class="col-xs-12 col-sm-6 col-md-3">   
+                            <div class="thumbnail">
+                                <div class="caption">
+                                  <div class="caption-content">
+                                    <span>
+                                      <a href="https://github.com/Deku/GSBOT-RPG" ><i class="fa fa-link"></i></a>   
+                                    </span>
+                                    <h3>EGSA RPG Bot</h3>
+                                    <p>EGSA Bot es un bot de chat basado en el trabajo de <a href="https://github.com/UlysseM">UlysseM</a>, modificado para agregar funcionalidades de RPG y manejo de la cola de canciones, permitiendo una mejor automatización de las transmisiones en <a href="http://www.grooveshark.com">Grooveshark</a>.</p>
+                                  </div>
+                                </div>
+                                <img src="images/projects/egsabot.png" alt="portfolio">
+                            </div>
+                          </div>
+                          <!-- EGSA WEB -->
+                          <div class="col-xs-12 col-sm-6 col-md-3">   
+                            <div class="thumbnail">
+                                <div class="caption">
+                                  <div class="caption-content">
+                                    <span>
+                                      <a href="http://egsa.github.io" class=""><i class="fa fa-link"></i></a>
+                                      </span>
+                                      <h3>Web - Epic Grooveshark Assembly</h3>
+                                      <p>Sitio web para la comunidad Epic Grooveshark Assembly (EGSA), quienes cuentan con un <a href="http://grooveshark.com/#!/epicgroovesharkassembly/broadcast">broadcast en Grooveshark</a>.</p>
+                                  </div>
+                                </div>
+                                <img src="images/projects/egsaweb.png" alt="portfolio">
+                            </div>
+                          </div>
+                          <!-- LOOKING FOR GROUP -->
+                          <div class="col-xs-12 col-sm-6 col-md-3">   
+                            <div class="thumbnail">
+                                <div class="caption">
+                                  <div class="caption-content">
+                                    <span>
+                                    <a href="https://github.com/Deku/LookingforGroup" class=""><i class="fa fa-link"></i></a>
+                                    </span>
+                                    <h3>Looking for Group</h3>
+                                    <p>Incubadora de ideas inspirada por Kickstarter y Freelancer. Permite iniciar un proyecto y buscar personas que te ayuden a desarrollarlo.</p>
+                                  </div>
+                                </div>
+                                <img src="images/projects/lfg.png" alt="portfolio">
+                            </div>
+                          </div>
+                          <!-- SPACE GAME -->
+                          <div class="col-xs-12 col-sm-6 col-md-3">   
+                            <div class="thumbnail">
+                                <div class="caption">
+                                  <div class="caption-content">
+                                    <span>
+                                      <a href="{{site.baseurl}}demos/spacegame" class=""><i class="fa fa-link"></i></a>
+                                      </span>
+                                      <h3>Juego Javascript: Space Game</h3>
+                                      <p>Juego simple hecho con Javascript en el que se demuestra la detección de colisión basada en la información de los pixeles dibujados en la pantalla.</p>
+                                  </div>
+                                </div>
+                                <img src="images/projects/spacegame.png" alt="portfolio">
+                            </div>
+                          </div>
+                        </div>
+                      </div><!--/ Item active end -->
+
+                <div class="item">
+                        <div class="row">
+                          <!-- PLATFORMER -->
+                          <div class="col-xs-12 col-sm-6 col-md-3">   
+                            <div class="thumbnail">
+                                <div class="caption">
+                                  <div class="caption-content">
+                                    <span>
+                                      <a href="{{site.baseurl}}demos/relax" class=""><i class="fa fa-link"></i></a>
+                                      </span>
+                                      <h3>Juego Javascript: Platformer</h3>
+                                      <p>Primer acercamiento al framework Phaser, el cual facilita el proceso de desarrollo de videojuegos en HTML5.</p>
+                                  </div>
+                                </div>
+                                <img src="images/projects/platformer.png" alt="portfolio">
+                            </div>
+                          </div>
+                          <!-- CUCCOS FOR DINNER -->
+                          <div class="col-xs-12 col-sm-6 col-md-3">   
+                            <div class="thumbnail">
+                                <div class="caption">
+                                  <div class="caption-content">
+                                    <span>
+                                      <a href="{{site.baseurl}}demos/cuccosfordinner" class=""><i class="fa fa-link"></i></a>
+                                      </span>
+                                      <h3>Juego Javascript: Cuccos for Dinner</h3>
+                                      <p>Juego del tipo shooter hecho en Javascript utilizando la librería CreateJS.</p>
+                                  </div>
+                                </div>
+                                <img src="images/projects/cuccos.png" alt="portfolio">
+                            </div>
+                          </div>
+                        </div>
+                      </div><!--/ Item end -->
+                  </div><!-- Carousel inner end -->
+            </div>  <!-- col-md-9 end -->
+
+            <div class="barrier-carousel-controller portfolio-control">
+               <a data-slide="prev" href="#portfolio-carousel" class="left"><i class="fa fa-chevron-left"></i></a>
+               <a data-slide="next" href="#portfolio-carousel" class="right"><i class="fa fa-chevron-right"></i></a>
+              </div><!-- Controller end -->
+
+              </div><!-- Carousel end -->                          
+            </div><!-- Main Col end -->
+          </div><!--/  row end -->
+      </div><!--/ Main row end -->
+    </div><!-- PROJECTS section end -->
+
+    <!-- SOCIAL -->
+    <section id="extras">
+      <div class="container">
         <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            <div class="media projects-wrap">
-              <div class="pull-left col-md-2 col-xs-12">
-                <img class="img-circle img-responsive" src="{{site.baseurl}}img/project-vivienda-inteligente.png" alt="Vivienda Inteligente">
+          <div class="col-md-12">
+            <div class="header-desc text-center">
+              <div class="header-content">
+                <h3 class="big-title">Extras</h3>
               </div>
-              <div class="media-body col-md-9 col-xs-12">
-                <h3 class="media-heading">Sentinel <span class="small text-muted">Dom&oacute;tica</span></h3>
-                <p class="text-justify">
-                  Sentinel es mi proyecto universitario (futura t&eacute;sis). Se trata de un proyecto de domótica aplicada a un ambiente de oficina para el monitoreo de las variables ambientales que influyen en la satisfacción de los colaboradores con su entorno de trabajo, mediante la utilizaci&oacute;n de <a href="http://www.arduino.cc/es/" target="_blank">Arduino</a>.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-10 col-md-offset-1">
-            <div class="media projects-wrap">
-              <div class="pull-left col-md-2 col-xs-12">
-                <img class="img-circle img-responsive" src="{{site.baseurl}}img/project-endercore.png" alt="EnderCore">
-              </div>
-              <div class="media-body col-md-9 col-xs-12">
-                <h3 class="media-heading">EnderCore <span class="small text-muted">Plugin RPG para Bukkit</span></h3>
-                <p class="text-justify">
-                  EnderCore es un plugin para Bukkit que incluye todas las caracter&iacute;sticas necesarias para un servidor RPG. Est&aacute; inspirado en el proyecto <a href="https://github.com/TrinityCore/TrinityCore"><i class="fa fa-github"></i> TrinityCore</a> y toma parte de su estructura.
-                </p>
-                <a class="btn btn-primary" href="https://github.com/Deku/EnderCore"><i class="fa fa-github"></i> Repo en Github</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-10 col-md-offset-1">
-            <div class="media projects-wrap">
-              <div class="pull-left col-md-2 col-xs-12">
-                <img class="img-circle img-responsive" src="{{site.baseurl}}img/project-egsa-bot.png" alt="Vivienda Inteligente">
-              </div>
-              <div class="media-body col-md-9 col-xs-12">
-                <h3 class="media-heading">Grooveshark RPG Bot</h3>
-                <p class="text-justify">EGSA Bot es un bot de chat basado en el trabajo de <a href="https://github.com/UlysseM"><i class="fa fa-github"></i> UlysseM</a>, modificado para agregar funcionalidades de RPG y manejo de la cola de canciones, permitiendo una mejor automatización de las transmisiones en <a href="http://www.grooveshark.com">Grooveshark</a>.
-                </p>
-                <a class="btn btn-primary" href="https://github.com/Deku/GSBOT-RPG"><i class="fa fa-github"></i> Repo en Github</a>
-              </div>
+              <p>Algunas cosillas extras que nunca están de más.</p>
             </div>
           </div>
         </div>
+
         <div class="row">
           <div class="col-md-4 col-md-offset-1">
             <h2>Tweets</h2>
@@ -85,7 +279,7 @@ title: Inicio
             <h2>Links de interés</h2>
             <ul class="links">
               <li>
-                <img class="pull-left img-rounded" src="{{site.baseurl}}img/sm-logo.png" alt="Smashing Magazine"/>
+                <img class="pull-left img-rounded" src="{{site.baseurl}}images/sm-logo.png" alt="Smashing Magazine"/>
                 <div class="link-text">
                   <h4><a href="http://www.smashingmagazine.com/" target="_blank">Smashing Magazine</a></h4>
                   <p>
@@ -95,7 +289,7 @@ title: Inicio
                 </div>
               </li>
               <li>
-                <img class="pull-left img-rounded" src="{{site.baseurl}}img/cl-logo.png" alt="Colour Lovers"/>
+                <img class="pull-left img-rounded" src="{{site.baseurl}}images/cl-logo.png" alt="Colour Lovers"/>
                 <h4><a href="http://www.colourlovers.com/">Colour Lovers</a></h4>
                 <p>
                   Idioma: Inglés<br>
@@ -106,4 +300,4 @@ title: Inicio
           </div>
         </div>
       </div>
-    </section><!-- /PROJECTS -->
+    </section><!-- EXTRAS section end -->
