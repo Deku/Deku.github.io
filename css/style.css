@@ -408,24 +408,6 @@ h5{
 	font-size: 14px;
 	font-weight: 700;
 }
-.slider-content h5:before{
-	content:"";
-	position: absolute;
-	width: 35px;
-	height: 1px;
-	background: #fff;
-	left: 35px;
-	top: 12px;
-}
-.slider-content h5:after{
-	content:"";
-	position: absolute;
-	width: 35px;
-	height: 1px;
-	background: #fff;
-	right: 35px;
-	top: 12px;
-}
 
 .slider-content a{
 	color: #fff;
