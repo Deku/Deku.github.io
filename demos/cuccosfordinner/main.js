@@ -167,6 +167,7 @@ function birdDeath()
     deathAnimation.y = chickenYPos;
     deathAnimation.gotoAndPlay("die");
     stage.addChild(deathAnimation);
+    createjs.Sound.play("deathSound");
 }
 
 function tickEvent()
@@ -309,7 +310,10 @@ function handleMouseDown(event)
     	birdDeath();
     	score += 100;
     	scoreText.text = "Score: " + score.toString();
-    	createjs.Sound.play("deathSound");
+
+        // Randomize direction
+        chickenXSpeed = (!(Math.random()<.5) ? chickenXSpeed : chickenXSpeed * (-1));
+        chickenYSpeed = (!(Math.random()<.5) ? chickenYSpeed : chickenYSpeed * (-1));
     	
         //Make it harder next time
     	chickenYSpeed *= 1.25;
