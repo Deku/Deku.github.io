@@ -1,35 +1,54 @@
+// HTML canvas
 var context;
 var canvas;
-var queue;
+
+
+// Dimensiones del canvas
 var WIDTH = 768;
 var HEIGHT = 672;
+
 var mouseXPosition;
 var mouseYPosition;
+
+// Variables enemigos
+var chickenXPos = 100;
+var chickenYPos = 100;
+var chickenXSpeed = 1.5;
+var chickenYSpeed = 1.75;
+
+// Variables juego
+var score = 0;
+var gameTimer; // intervalo
+var gameTime = 0;
+var ticksForRandomize = 5;
+var ticksCounter;
+
+
+// Variables debug
+var debugMode = false;
+var DEBUG = { INFO: 1, WARNING: 2, ERROR: 3 };
+
+// Cola de recursos de CreateJS
+var queue;
+
+// Recursos
 var stage;
 var animation;
 var deathAnimation;
 var spriteSheet;
-var enemyXPos = 100;
-var enemyYPos = 100;
-var enemyXSpeed = 1.5;
-var enemyYSpeed = 1.75;
-var score = 0;
-var scoreText;
-var gameTimer;
-var gameTime = 0;
 var timerText;
-var debugMode = false;
-var DEBUG = { INFO: 1, WARNING: 2, ERROR: 3 };
+var scoreText;
 
+/*
+ *  Cargar el juego
+ *
+ */
 window.onload = function()
 {
-    /*
-     *      Set up the Canvas with Size and height
-     *
-     */
+    //Establecer el ancho y alto del canvas
     canvas = document.getElementById('game');
 
-    // If we don't get the canvas stop running
+    // Sin canvas no se puede seguir
     if (canvas == null) return;
 
 
@@ -38,19 +57,15 @@ window.onload = function()
     context.canvas.height = HEIGHT;
     stage = new createjs.Stage("game");
 
-    /*
-     *      Set up the Asset Queue and load sounds
-     *
-     */
+    // Crear la cola de recursos
     queue = new createjs.LoadQueue(false);
+
+    // Cargar los recursos de sonido
     queue.installPlugin(createjs.Sound);
     queue.on("complete", queueLoaded, this);
     createjs.Sound.alternateExtensions = ["ogg", "wav"];
 
-    /*
-     *      Create a load manifest for all assets
-     *
-     */
+    // Crear un manifiesto de carga para todos los recursos
     queue.loadManifest([
         {id: 'backgroundImage', src: 'assets/background.png'},
         {id: 'crossHair', src: 'assets/crosshair.png'},
@@ -62,6 +77,8 @@ window.onload = function()
         {id: 'birdSpritesheet', src: 'assets/birdSpritesheet.png'},
         {id: 'birdDeath', src: 'assets/birdDeath.png'},
     ]);
+
+    // Iniciar la carga de la cola
     queue.load();
 
 }
@@ -131,8 +148,8 @@ function createEnemy()
 	animation = new createjs.Sprite(spriteSheet, "flap");
     animation.regX = 24;
     animation.regY = 31;
-    animation.x = enemyXPos;
-    animation.y = enemyYPos;
+    animation.x = chickenXPos;
+    animation.y = chickenYPos;
     animation.gotoAndPlay("flap");
     stage.addChildAt(animation,1);
 }
@@ -142,33 +159,59 @@ function birdDeath()
     deathAnimation = new createjs.Sprite(birdDeathSpriteSheet, "die");
     deathAnimation.regX = 24;
     deathAnimation.regY = 31;
-    deathAnimation.x = enemyXPos;
-    deathAnimation.y = enemyYPos;
+    deathAnimation.x = chickenXPos;
+    deathAnimation.y = chickenYPos;
     deathAnimation.gotoAndPlay("die");
     stage.addChild(deathAnimation);
 }
 
 function tickEvent()
 {
-	//Make sure enemy bat is within game boundaries and move enemy Bat
-	if(enemyXPos < WIDTH - 5 && enemyXPos > 5)
+    var randomize = false;
+
+    // Deberiamos cambiar la ruta de la gallina?
+    if (ticksCounter == ticksForRandomize)
+    {
+        randomize = true;
+        ticksCounter = 0;
+    } else {
+        ticksCounter++;
+    }
+
+	/*
+     * Verificar que la gallina este dentro del canvas y mover
+     *
+     */
+
+    // Posicion horizontal
+	if(chickenXPos < WIDTH - 5 && chickenXPos > 5)
 	{
-		enemyXPos += enemyXSpeed;
+        if (randomize) {
+            chickenXPos += !(+new Date()%2) ? chickenXSpeed : chickenXSpeed * (-1); // Faux-randomness
+        } else {
+            chickenXPos += chickenXSpeed;
+        }
 	} else {
-		enemyXSpeed = enemyXSpeed * (-1);
-		enemyXPos += enemyXSpeed;
+		chickenXSpeed = chickenXSpeed * (-1);
+		chickenXPos += chickenXSpeed;
 	}
 
-	if(enemyYPos < HEIGHT - 5 && enemyYPos > 5)
+    // Posicion vertical
+	if(chickenYPos < HEIGHT - 5 && chickenYPos > 5)
 	{
-		enemyYPos += enemyYSpeed;
+		if (randomize) {
+            chickenYPos += !(+new Date()%2) ? chickenYSpeed : chickenYSpeed * (-1); // Faux-randomness
+        } else {
+            chickenYPos += chickenYSpeed;
+        }
 	} else {
-		enemyYSpeed = enemyYSpeed * (-1);
-		enemyYPos += enemyYSpeed;
+		chickenYSpeed = chickenYSpeed * (-1);
+		chickenYPos += chickenYSpeed;
 	}
 
-	animation.x = enemyXPos;
-	animation.y = enemyYPos;
+    // Actualizar la posicion de los graficos
+	animation.x = chickenXPos;
+	animation.y = chickenYPos;
 
     if (debugMode)
     {
@@ -209,9 +252,9 @@ function handleMouseDown(event)
     createjs.Sound.play("shot");
 
     // Increase speed of enemy slightly
-    enemyXSpeed *= 1.05;
-    enemyYSpeed *= 1.06;
-    debug("Changed enemy speed x: " + enemyXSpeed + " y: " + enemyYSpeed, DEBUG.INFO);
+    chickenXSpeed *= 1.05;
+    chickenYSpeed *= 1.06;
+    debug("Changed enemy speed x: " + chickenXSpeed + " y: " + chickenYSpeed, DEBUG.INFO);
 
     // Correct mouse position
     var rect = canvas.getBoundingClientRect();
@@ -259,13 +302,13 @@ function handleMouseDown(event)
     	createjs.Sound.play("deathSound");
     	
         //Make it harder next time
-    	enemyYSpeed *= 1.25;
-    	enemyXSpeed *= 1.3;
+    	chickenYSpeed *= 1.25;
+    	chickenXSpeed *= 1.3;
 
-        if (enemyXSpeed > 60) enemyXSpeed = 65;
-        if (enemyYSpeed > 60) enemyYSpeed = 60;
+        if (chickenXSpeed > 60) chickenXSpeed = 65;
+        if (chickenYSpeed > 60) chickenYSpeed = 60;
 
-        debug("Changed enemy speed x: " + enemyXSpeed + " y: " + enemyYSpeed);
+        debug("Changed enemy speed x: " + chickenXSpeed + " y: " + chickenYSpeed);
 
     	//Create new enemy
     	var timeToCreate = Math.floor((Math.random()*3500)+1);
