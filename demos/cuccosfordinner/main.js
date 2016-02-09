@@ -190,7 +190,7 @@ function tickEvent()
 	if(chickenXPos < WIDTH - 5 && chickenXPos > 5)
 	{
         if (randomize) {
-            chickenXSpeed = (!(Math.random()<.5 ? chickenXSpeed : chickenXSpeed * (-1));
+            chickenXSpeed = (!(Math.random()<.5) ? chickenXSpeed : chickenXSpeed * (-1));
         }
 
         chickenXPos += chickenXSpeed;
@@ -203,7 +203,7 @@ function tickEvent()
 	if(chickenYPos < HEIGHT - 5 && chickenYPos > 5)
 	{
 		if (randomize) {
-            chickenYSpeed = (!(Math.random()<.5 ? chickenYSpeed : chickenYSpeed * (-1));
+            chickenYSpeed = (!(Math.random()<.5) ? chickenYSpeed : chickenYSpeed * (-1));
         }
 
         chickenYPos += chickenYSpeed;
