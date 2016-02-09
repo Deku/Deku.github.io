@@ -208,7 +208,7 @@ function tickEvent()
 	if(chickenYPos < HEIGHT - 5 && chickenYPos > 5)
 	{
 		if (randomize) {
-            chickenYSpeed = (!(Math.random()<.5) ? chickenYSpeed : chickenYSpeed * (-1));
+            chickenYSpeed = (!(Math.random()<.5) && chickenXSpeed > 0 ? chickenYSpeed : chickenYSpeed * (-1));
         }
 
         chickenYPos += chickenYSpeed;
@@ -313,10 +313,10 @@ function handleMouseDown(event)
 
         // Randomize direction
         chickenXSpeed = (!(Math.random()<.5) ? chickenXSpeed : chickenXSpeed * (-1));
-        chickenYSpeed = (!(Math.random()<.5) ? chickenYSpeed : chickenYSpeed * (-1));
+        chickenYSpeed = (!(Math.random()<.5)  && chickenXSpeed > 0 ? chickenYSpeed : chickenYSpeed * (-1));
     	
         //Make it harder next time
-    	chickenYSpeed *= 1.25;
+    	chickenYSpeed *= 1.15;
     	chickenXSpeed *= 1.3;
 
         if (chickenXSpeed > 60) chickenXSpeed = 65;
