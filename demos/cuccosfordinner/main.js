@@ -25,7 +25,7 @@ var ticksCounter;
 
 
 // Variables debug
-var debugMode = false;
+var debugMode = true;
 var DEBUG = { INFO: 1, WARNING: 2, ERROR: 3 };
 
 // Cola de recursos de CreateJS
@@ -172,10 +172,13 @@ function tickEvent()
     // Deberiamos cambiar la ruta de la gallina?
     if (ticksCounter == ticksForRandomize)
     {
+        debug("Changing cucco path...");
+
         randomize = true;
         ticksCounter = 0;
     } else {
         ticksCounter++;
+        debug("Ticks: " + ticksCounter);
     }
 
 	/*
@@ -187,7 +190,7 @@ function tickEvent()
 	if(chickenXPos < WIDTH - 5 && chickenXPos > 5)
 	{
         if (randomize) {
-            chickenXPos += !(+new Date()%2) ? chickenXSpeed : chickenXSpeed * (-1); // Faux-randomness
+            chickenXPos += (!(+new Date()%2) ? chickenXSpeed : chickenXSpeed * (-1)); // Faux-randomness
         } else {
             chickenXPos += chickenXSpeed;
         }
@@ -268,7 +271,9 @@ function handleMouseDown(event)
     // Obtain the enemy position
     var spriteX = Math.round(animation.x);
     var spriteY = Math.round(animation.y);
+
     debug("Clicked on x: " + shotX + " y: " + shotY + " and enemy's position was x: " + spriteX + " y: " + spriteY, DEBUG.INFO);
+
     if (debugMode)
     {
         context.fillStyle = "#00FF00";
@@ -359,4 +364,8 @@ function debug(message, level) {
       default:
         console.log(message);
     }
+}
+
+function debug(message) {
+    return debug(message, DEBUG.INFO);
 }
