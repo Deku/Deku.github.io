@@ -21,7 +21,7 @@ var score = 0;
 var gameTimer; // intervalo
 var gameTime = 0;
 var ticksForRandomize = 5;
-var ticksCounter;
+var ticksCounter = 0;
 
 
 // Variables debug
