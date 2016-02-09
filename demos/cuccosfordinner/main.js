@@ -20,7 +20,7 @@ var chickenYSpeed = 1.75;
 var score = 0;
 var gameTimer; // intervalo
 var gameTime = 0;
-var ticksForRandomize = 5;
+var ticksForRandomize = 100;
 var ticksCounter = 0;
 
 
@@ -190,7 +190,7 @@ function tickEvent()
 	if(chickenXPos < WIDTH - 5 && chickenXPos > 5)
 	{
         if (randomize) {
-            chickenXSpeed = (!(+new Date()%2) ? chickenXSpeed : chickenXSpeed * (-1)); // Faux-randomness
+            chickenXSpeed = (!(Math.random()<.5 ? chickenXSpeed : chickenXSpeed * (-1));
         }
 
         chickenXPos += chickenXSpeed;
@@ -203,9 +203,9 @@ function tickEvent()
 	if(chickenYPos < HEIGHT - 5 && chickenYPos > 5)
 	{
 		if (randomize) {
-            chickenYSpeed = !(+new Date()%2) ? chickenYSpeed : chickenYSpeed * (-1); // Faux-randomness
+            chickenYSpeed = (!(Math.random()<.5 ? chickenYSpeed : chickenYSpeed * (-1));
         }
-        
+
         chickenYPos += chickenYSpeed;
 
 	} else {
