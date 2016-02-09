@@ -25,7 +25,7 @@ var ticksCounter = 0;
 
 
 // Variables debug
-var debugMode = true;
+var debugMode = false;
 var DEBUG = { INFO: 1, WARNING: 2, ERROR: 3 };
 
 // Cola de recursos de CreateJS
@@ -51,10 +51,14 @@ window.onload = function()
     // Sin canvas no se puede seguir
     if (canvas == null) return;
 
-
     context = canvas.getContext('2d');
     context.canvas.width = WIDTH;
     context.canvas.height = HEIGHT;
+
+    // Mostrar al usuario
+    context.font = "20px Arial";
+    context.fillText("Cargando...", 10, 50);
+
     stage = new createjs.Stage("game");
 
     // Crear la cola de recursos
