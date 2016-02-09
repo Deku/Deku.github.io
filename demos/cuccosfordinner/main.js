@@ -25,7 +25,7 @@ var ticksCounter = 0;
 
 
 // Variables debug
-var debugMode = true;
+var debugMode = false;
 var DEBUG = { INFO: 1, WARNING: 2, ERROR: 3 };
 
 // Cola de recursos de CreateJS
@@ -51,10 +51,14 @@ window.onload = function()
     // Sin canvas no se puede seguir
     if (canvas == null) return;
 
-
     context = canvas.getContext('2d');
     context.canvas.width = WIDTH;
     context.canvas.height = HEIGHT;
+
+    // Mostrar al usuario
+    context.font = "20px Arial";
+    context.fillText("Cargando...", 10, 50);
+
     stage = new createjs.Stage("game");
 
     // Crear la cola de recursos
@@ -163,6 +167,7 @@ function birdDeath()
     deathAnimation.y = chickenYPos;
     deathAnimation.gotoAndPlay("die");
     stage.addChild(deathAnimation);
+    createjs.Sound.play("deathSound");
 }
 
 function tickEvent()
@@ -203,7 +208,7 @@ function tickEvent()
 	if(chickenYPos < HEIGHT - 5 && chickenYPos > 5)
 	{
 		if (randomize) {
-            chickenYSpeed = (!(Math.random()<.5) ? chickenYSpeed : chickenYSpeed * (-1));
+            chickenYSpeed = (!(Math.random()<.5) && chickenXSpeed > 0 ? chickenYSpeed : chickenYSpeed * (-1));
         }
 
         chickenYPos += chickenYSpeed;
@@ -305,10 +310,13 @@ function handleMouseDown(event)
     	birdDeath();
     	score += 100;
     	scoreText.text = "Score: " + score.toString();
-    	createjs.Sound.play("deathSound");
+
+        // Randomize direction
+        chickenXSpeed = (!(Math.random()<.5) ? chickenXSpeed : chickenXSpeed * (-1));
+        chickenYSpeed = (!(Math.random()<.5)  && chickenXSpeed > 0 ? chickenYSpeed : chickenYSpeed * (-1));
     	
         //Make it harder next time
-    	chickenYSpeed *= 1.25;
+    	chickenYSpeed *= 1.15;
     	chickenXSpeed *= 1.3;
 
         if (chickenXSpeed > 60) chickenXSpeed = 65;
