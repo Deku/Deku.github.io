@@ -172,13 +172,13 @@ function tickEvent()
     // Deberiamos cambiar la ruta de la gallina?
     if (ticksCounter == ticksForRandomize)
     {
-        debug("Changing cucco path...");
+        debug("Changing cucco path...", DEBUG.INFO);
 
         randomize = true;
         ticksCounter = 0;
     } else {
         ticksCounter++;
-        debug("Ticks: " + ticksCounter);
+        debug("Ticks: " + ticksCounter, DEBUG.INFO);
     }
 
 	/*
@@ -364,8 +364,4 @@ function debug(message, level) {
       default:
         console.log(message);
     }
-}
-
-function debug(message) {
-    return debug(message, DEBUG.INFO);
 }
