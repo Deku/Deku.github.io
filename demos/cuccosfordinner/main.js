@@ -190,10 +190,10 @@ function tickEvent()
 	if(chickenXPos < WIDTH - 5 && chickenXPos > 5)
 	{
         if (randomize) {
-            chickenXPos += (!(+new Date()%2) ? chickenXSpeed : chickenXSpeed * (-1)); // Faux-randomness
-        } else {
-            chickenXPos += chickenXSpeed;
+            chickenXSpeed = (!(+new Date()%2) ? chickenXSpeed : chickenXSpeed * (-1)); // Faux-randomness
         }
+
+        chickenXPos += chickenXSpeed;
 	} else {
 		chickenXSpeed = chickenXSpeed * (-1);
 		chickenXPos += chickenXSpeed;
@@ -203,10 +203,11 @@ function tickEvent()
 	if(chickenYPos < HEIGHT - 5 && chickenYPos > 5)
 	{
 		if (randomize) {
-            chickenYPos += !(+new Date()%2) ? chickenYSpeed : chickenYSpeed * (-1); // Faux-randomness
-        } else {
-            chickenYPos += chickenYSpeed;
+            chickenYSpeed = !(+new Date()%2) ? chickenYSpeed : chickenYSpeed * (-1); // Faux-randomness
         }
+        
+        chickenYPos += chickenYSpeed;
+
 	} else {
 		chickenYSpeed = chickenYSpeed * (-1);
 		chickenYPos += chickenYSpeed;
