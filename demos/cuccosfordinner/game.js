@@ -88,6 +88,7 @@ gameState.prototype = {
     },
     create: function () {
         // Reset game variables
+        score = 0;
         this.cuccos = [];
         this.amount = 1;
         this.minSpeed = 10;
