@@ -54,11 +54,15 @@ titleState.prototype = {
 
 
 var gameState = function (game) {
+    // GUI Layer group
+    this.gui;
     // GUI texts
     this.scoreText;
     this.timeText;
     // Time limit for the game
     this.timeLimit;
+    // Entities Layer group
+    this.entities;
     // Array containing cuccos
     this.cuccos;
     // Current amount of cuccos displayed
@@ -75,6 +79,7 @@ var gameState = function (game) {
 gameState.prototype = {
     preload: function () {
         game.load.image("background","assets/background.png");
+        game.load.image("clock", "assets/gui.png");
         game.load.spritesheet("cucco", "assets/bird.png", 48, 63);
         game.load.spritesheet("goldencucco", "assets/goldenBird.png", 48, 63);
         game.load.spritesheet("cuccodie", "assets/birdDeath.png", 48, 63);
@@ -92,9 +97,7 @@ gameState.prototype = {
         // Create background
         game.stage.backgroundColor = "#182d3b";
         game.add.tileSprite(0, 0, WIDTH, HEIGHT, "background");
-        // Initialize texts
-        this.scoreText = game.add.text(10, 10, "Cuccos catched: 0", {font: "18px Arial", fill: "#fff"});
-        this.timeText = game.add.text(10, 30, "Remaining time: " + this.timeLimit, {font: "18px Arial", fill: "#fff"});
+        
         // Start playing background music
         this.bgm = game.add.audio("bgm");
         this.bgm.play();
@@ -102,7 +105,17 @@ gameState.prototype = {
         this.dieSound = game.add.audio("cuccodiesound");
 
         // Add birds to the screen
+        this.entities = game.add.group();
         this.addBirds();
+
+        // Initialize texts
+        this.gui = game.add.group();
+        this.gui.create(10, 10, "clock");
+        this.scoreText = game.add.text(50, 15, "Cuccos catched: 0", {font: "18px Arial", fill: "#fff"});
+        this.timeText = game.add.text(50, 50, "Remaining time: " + this.timeLimit, {font: "18px Arial", fill: "#fff"});
+        this.gui.add(this.scoreText);
+        this.gui.add(this.timeText);
+        
     },
     render: function () {
         // Get remaining time, limit it in 0
@@ -136,7 +149,7 @@ gameState.prototype = {
                 var isGolden = (Math.random() * 100) <= 10;
                 var birdType = isGolden ? "goldencucco" : "cucco";
 
-                this.cuccos[i] = game.add.sprite(randX, randY, birdType);
+                this.cuccos[i] = this.entities.create(randX, randY, birdType);
                 this.cuccos[i].name = birdType;
                 this.cuccos[i].animations.add("move");
                 this.cuccos[i].animations.play("move", 10, true);
@@ -179,7 +192,7 @@ gameState.prototype = {
         bird.destroy();
 
         // Replace with death animation in the same spot
-        bird = game.add.sprite(x, y, "cuccodie");
+        bird = this.entities.create(x, y, "cuccodie");
         bird.anchor.set(0.5)
         bird.animations.add("die");
         bird.animations.play("die", 15, false, true);
