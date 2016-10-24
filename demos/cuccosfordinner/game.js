@@ -36,10 +36,13 @@ titleState.prototype = {
         line2 = game.add.text(game.world.centerX, game.world.centerY + 50, "for dinner", {font: "36px Arial Black", fill: "#fff", align: "center"});
         line1.anchor.set(0.5);
         line2.anchor.set(0.5);
-        button = game.add.button(game.world.centerX, game.world.centerY + 110, "button", function () {
-            game.state.start("PlayGame");
-        });
+        button = game.add.button(game.world.centerX, game.world.centerY + 110, "button");
         button.anchor.set(0.5);
+        button.inputEnabled = true;
+        button.events.onInputDown.add(function () {
+            game.state.start("PlayGame");
+        }, this);
+        
         buttonText = game.add.text(
                 button.centerX,
                 button.centerY,
