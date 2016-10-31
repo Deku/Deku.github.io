@@ -189,7 +189,7 @@ gameState.prototype = {
                 velX = velX > this.maxSpeed ? this.maxSpeed : velX;
                 velY = velY > this.maxSpeed ? this.maxSpeed : velY;
                 // 10% chance to spawn a golden cucco
-                var isGolden = (Math.random() * 100) <= 50;
+                var isGolden = (Math.random() * 100) <= 10;
                 var birdType = isGolden ? "goldencucco" : "cucco";
 
                 this.cuccos[i] = this.entities.create(randX, randY, birdType);
