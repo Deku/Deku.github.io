@@ -1,21 +1,9 @@
-@import url(http://fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,700,800);
-@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200,700);
-@font-face {
-  font-family: 'PressStart2P';
-  src: url('../fonts/PressStart2P.ttf');
-}
 
 /**
  * General
  */
-
-body {
-  font-family: 'Dosis', 'Helvetica Neue', Arial, Tahoma, Geneva, sans-serif;
-  font-size: 17px;
-}
 .btn {
   border-radius: 0;
-  font-family: 'Yanone Kaffeesatz', 'Helvetica Neue', Arial,'sans-serif';
   font-size: 20px;
   padding: 9px 23px;
 }
@@ -27,60 +15,6 @@ button.btn:hover {
   background-color: #3276B1;
   border-color: #285E8E;
   color: #fff;
-}
-a {
-  -webkit-transition: 300ms;
-  -moz-transition: 300ms;
-  -o-transition: 300ms;
-  transition: 300ms;
-}
-a:focus, 
-a:hover {
-  text-decoration: none;
-  outline: none
-}
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Yanone Kaffeesatz', 'sans-serif';
-  font-weight: 300;
-  text-transform: uppercase;
-}
-h2 {
-  font-size: 2.1em;
-}
-.media>.pull-left{
-  margin-right: 20px;
-}
-.media>.pull-right{
-  margin-left: 20px;
-}
-.navbar-toggle {
-  margin-top: 12px
-}
-.navbar-toggle .icon-bar {
-  background-color: #fff;
-}
-.navbar-toggle, 
-.navbar-toggle:focus {
-  border:1px solid #fff;
-  outline: none;
-}
-.projects-wrap {
-  padding: 40px 30px;
-  background: #fff;
-  border: 4px solid;
-  border-color: #02779E;
-  margin: 0 0 40px;
-  color: #02779E;
-}
-.projects-wrap p a {
-  border-bottom: 1px dashed;
-}
-.projects-wrap h3 {
-  font-size: 20px;
-  margin: 10px 0;
-}
-.projects-wrap .pull-left {
-  margin-right: 20px;
 }
 
 /*************************
@@ -119,51 +53,14 @@ h2 {
   position: absolute;
   top: -35px;
 }
-.navbar-right {
-  background-color: #000;
-  padding:0 95px 0 0;
-  opacity: .9
-}
 .navbar-right li a {
   padding: 35px 21px;
   font-size: 22px;
-  color: #fff;
   text-transform: uppercase;
-  font-family: 'Yanone Kaffeesatz', 'sans-serif';
   font-weight: 300;
 }
-.navbar-right li a:hover, 
-.navbar-right li a:focus,  
-.navbar-right .active a {
-  background-color: #fff;
-  color: #16728f
-}
-.fixed-menu {
-  background-color: #000;
-  position: fixed;
-  top: 0;
-}
-.fixed-menu .navbar-right {
-  padding: 0;
-}
-.fixed-menu .navbar-right li a {
-  font-size: 18px;
-  padding: 20px 25px;
-  text-shadow:inherit;
-}
-.fixed-menu .navbar-brand {
-  height: 60px;
-  margin-top: 0;
-  padding: 0;
-  margin-bottom: 0;
-  width: 125px;
-}
-.fixed-menu .navbar-brand img {
-  height:60px;
-  top: 0;
-}
-.fixed-menu .header-top {
-  display: none;
+.nav>li>a:hover, .nav>li>a:focus {
+  background: none;
 }
 
 /*************************
