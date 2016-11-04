@@ -7,12 +7,6 @@ var shipCompleted = 0;
 var WIDTH = 768;
 var HEIGHT = 672;
 
-function getAngle(x1, y1, x2, y2) {
-    var pend = (y2 - y1) / (x2 - x1);
-
-    return Math.atan(pend);
-}
-
 
 window.onload = function () {
     var container = document.getElementById('game-container');
