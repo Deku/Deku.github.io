@@ -75,7 +75,7 @@ body{
 }
 
 a{
-	color: #444;
+	color: #4c74ba;
 
 }
 
@@ -153,6 +153,7 @@ body, p{
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Droid Sans", Arial, Helvetica, sans-serif;
+	margin-bottom: 20px;
 }
 
 h1{
@@ -261,6 +262,10 @@ h5{
 }
 #process,#skill-bar{
 	padding: 70px 0px;
+}
+.tags {
+	color: #aaa;
+	text-transform: uppercase;
 }
 
 /*header title
@@ -611,12 +616,14 @@ h5{
 #profile h1 {
 	font-family: 'Pacifico';
 	font-size: 3em;
+	margin-bottom: 10px !important;
 }
 
 #profile h2 {
 	font-size: 20px;
 	color: #aaa;
-	margin-top: 10px;
+	font-weight: 300;
+	margin-top: 5px;
 }
 
 #profile .pro-info {
