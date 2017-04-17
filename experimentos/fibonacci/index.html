@@ -27,7 +27,7 @@ title: Sucesión de Fibonacci
                 <h2>Experimento</h2>
                 <p>Utilizando el módulo (resto de la división), transformaremos la sucesión de Fibonacci en una secuencia de notas
                 de una determinada escala musical. El divisor corresponderá a la cantidad de notas en la escala seleccionada.</p>
-                <div class="form-horizontal">
+                <div class="form-horizontal well">
                     <div class="form-group">
                         <label for="cant_numeros" class="control-label col-xs-4">Cantidad de números (1-999)</label>
                         <div class="col-xs-8">
@@ -56,7 +56,9 @@ title: Sucesión de Fibonacci
                             </select>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-success" id="reproducir" onclick="play()">Reproducir</button>
+                    <div class="clearfix">
+                        <button type="button" class="btn btn-success pull-right" id="reproducir" onclick="play()">Reproducir</button>
+                    </div>
                 </div>
                 <table id="fibonacci-table" class="table table-bordered">
                     <thead>
