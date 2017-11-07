@@ -1,16 +1,24 @@
-var version = "0.3.0";
+var version = "1.1.0";
 var game;
 var caught = 0;
 var totalCaught = 0;
 var shipCompleted = 0;
 // Dimensiones del canvas
-var WIDTH = 768;
-var HEIGHT = 672;
+var _width = 0;
+var _height = 0;
+var _scale = 1;
 
+
+function scaled(number) { return number * _scale; }
 
 window.onload = function () {
     var container = document.getElementById('game-container');
-    game = new Phaser.Game(WIDTH, HEIGHT, Phaser.AUTO, container);
+    _width = container.offsetWidth;
+    _height = parseInt((_width / 768) * 672);
+    _scale = _width / 768;
+    console.debug(_width, _height, _scale);
+   
+    game = new Phaser.Game(_width, _height, Phaser.AUTO, container);
     game.state.add("Title", titleState);
     game.state.add("PlayGame", gameState);
     game.state.add("GameOver", gameOverState);
@@ -37,18 +45,19 @@ titleState.prototype = {
         var buttonText;
 
         game.stage.backgroundColor = '#182d3b';        
-        game.add.tileSprite(0, 0, WIDTH, HEIGHT, 'background');
+        var background = game.add.tileSprite(0, 0, _width, _height, 'background');
+        background.tileScale = new PIXI.Point(_scale, _scale);
         
-        line1 = game.add.text(game.world.centerX, game.world.centerY, "Cuccos", {font: "65px Arial Black", fill: "#fff", align: "center"});
+        line1 = game.add.text(game.world.centerX, game.world.centerY, "Cucco", {font: "10rem Pacifico", fill: "#fff", align: "center"});
         line1.anchor.set(0.5);
         
-        line2 = game.add.text(game.world.centerX, game.world.centerY + 50, "for dinner", {font: "36px Arial Black", fill: "#fff", align: "center"});
+        line2 = game.add.text(game.world.centerX, game.world.centerY + scaled(40), "Farm", {font: "5rem Pacifico", fill: "#fff", align: "center"});
         line2.anchor.set(0.5);
 
-        versionText = game.add.text(game.world.width - 10, game.world.height - 10, "v" + version, {font: "16px Arial", fill: "#fff", align: "right"});
+        versionText = game.add.text(game.world.width - 10, game.world.height - 10, "v" + version, {font: "14px Arial", fill: "#fff", align: "right"});
         versionText.anchor.set(1,1);
 
-        button = game.add.button(game.world.centerX, game.world.centerY + 110, "button");
+        button = game.add.button(game.world.centerX, game.world.centerY + scaled(110), "button");
         button.anchor.set(0.5);
         button.inputEnabled = true;
         button.events.onInputDown.add(function () {
@@ -74,6 +83,10 @@ titleState.prototype = {
 var gameState = function (game) {
     this.RUNAWAY_RADIUS = 300;
 
+    this.config = {
+        playMusic: true,
+        difficulty: 0
+    };
     // GUI Layer group
     this.gui;
     // GUI texts
@@ -124,15 +137,17 @@ gameState.prototype = {
 
         // Create background
         game.stage.backgroundColor = "#182d3b";
-        game.add.tileSprite(0, 0, WIDTH, HEIGHT, "background");
+        game.add.tileSprite(0, 0, _width, _height, "background");
         
         // Start playing background music
-        if (this.bgm != null) {
-            this.bgm.stop();
-        } else {
-            this.bgm = game.add.audio("bgm");
+        if (this.config.playMusic) {
+            if (this.bgm != null) {
+                this.bgm = game.add.audio("bgm");
+            } else {
+                this.bgm.stop();
+            }
+            this.bgm.play('', 0, 1, true, true);
         }
-        this.bgm.play('', 0, 1, true, true);
 
         // Set the die sound for future uses
         this.dieSound = game.add.audio("cuccodiesound");
@@ -336,7 +351,7 @@ gameOverState.prototype = {
         var buttonText;
 
         game.stage.backgroundColor = '#182d3b';        
-        game.add.tileSprite(0, 0, WIDTH, HEIGHT, 'background');
+        game.add.tileSprite(0, 0, _width, _height, 'background');
         
         line1 = game.add.text(game.world.centerX, game.world.centerY - 50, "GAME OVER", {font: "65px Arial Black", fill: "#fff", align: "center"});
         line1.stroke = "#292829";
