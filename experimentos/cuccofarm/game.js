@@ -7,15 +7,16 @@ var shipCompleted = 0;
 var _width = 0;
 var _height = 0;
 var _scale = 1;
-
+var MAXWIDTH = 768;
+var MAXHEIGHT = 672;
 
 function scaled(number) { return number * _scale; }
 
 window.onload = function () {
     var container = document.getElementById('game-container');
-    _width = container.offsetWidth;
-    _height = parseInt((_width / 768) * 672);
-    _scale = _width / 768;
+    _width = (container.offsetWidth > MAXWIDTH ? MAXWIDTH : container.offsetWidth);
+    _height = parseInt((_width / MAXWIDTH) * MAXHEIGHT);
+    _scale = _width / MAXWIDTH;
     console.debug(_width, _height, _scale);
    
     game = new Phaser.Game(_width, _height, Phaser.AUTO, container);
