@@ -111,7 +111,7 @@ var gameState = function (game) {
     this.minSpeed;
     this.maxSpeed = 200;
     // Audio
-    this.bgm;
+    this.bgm = null;
     this.dieSound;
 };
 
@@ -141,14 +141,19 @@ gameState.prototype = {
         game.add.tileSprite(0, 0, _width, _height, "background");
         
         // Start playing background music
-        if (this.config.playMusic) {
-            if (this.bgm != null) {
-                this.bgm = game.add.audio("bgm");
-            } else {
-                this.bgm.stop();
-            }
-            this.bgm.play('', 0, 1, true, true);
+        try {
+            if (this.config.playMusic) {
+                if (this.bgm != null) {
+                    this.bgm = game.add.audio("bgm");
+                } else {
+                    this.bgm.stop();
+                }
+                this.bgm.play('', 0, 1, true, true);
+            }    
+        } catch (e) {
+            console.error(e);
         }
+        
 
         // Set the die sound for future uses
         this.dieSound = game.add.audio("cuccodiesound");
