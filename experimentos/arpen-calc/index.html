@@ -14,6 +14,11 @@ title: WoW Arpen Calculator
                 <h1 class="text-handwritten">WoW: Calculadora de Penetración de Armadura</h1>
                 <form id="calc-frm" action="" method="post">
                     <div class="row">
+                        <div class="col-xs-12">
+                            <p class="text-justified">
+                                Al calcular la penetración de armadura, primero deben calcularse los efectos de aquellos debuffs que reducen la armadura del enemigo (Faerie Fire, Sunder Armor, etc.). A la cantidad de armadura resultante se le aplica el cálculo de la penetración de armadura según el rating del atacante, resultando en un porcentaje al cual se le suman los porcentajes obtenidos de talentos como <b>Serrated Blades</b> de pícaro, y auras como <b>Battle Stance</b> de guerrero.
+                            </p>
+                        </div>
                         <div class="col-xs-12 col-md-6">
                             <div class="form-group">
                                 <label class="control-label">Tu nivel:</label>
@@ -38,7 +43,9 @@ title: WoW Arpen Calculator
                     </div>
                     <div class="row">
                         <div class="col-xs-12">
-                            <input type="submit" name="submit" class="btn btn-success" value="Calcular"/>
+                            <div class="clearfix">
+                                <input type="submit" name="submit" class="btn btn-success pull-right" value="Calcular"/>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -49,7 +56,7 @@ title: WoW Arpen Calculator
             <div>
                 <div class="well">
                     Fuentes:<br>
-                    <a href="http://wowwiki.wikia.com/wiki/Armor_penetration">WoWWiki: Armor Penetration</a>
+                    <a href="http://wowwiki.wikia.com/wiki/Armor_penetration">WoWWiki: Armor Penetration</a><br>
                     <a href="http://wowwiki.wikia.com/wiki/Damage_reduction">WoWWiki: Damage Reduction</a>
                 </div>
             </div>
