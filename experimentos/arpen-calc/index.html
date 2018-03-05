@@ -97,19 +97,20 @@ title: WoW Arpen Calculator
         armorC = targetLvl < 60 ? 400 + 85 * targetLvl : 400 + 85 * targetLvl + 4.5 * 85 * (targetLvl - 59);
         arpCap = (targetArmor + armorC) / 3;
         armorRed = Math.min(targetArmor, arpCap) * arpPct;
+        let newArmor = targetArmor - armorRed;
 
         if (casterLvl == 83)
-            dmgDim = (targetArmor / (targetArmor + 16635)) * 100;
+            dmgDim = (newArmor / (newArmor + 16635)) * 100;
         else if (casterLvl >= 80)
-            dmgDim = (targetArmor / (targetArmor + 15232.5)) * 100;
+            dmgDim = (newArmor / (newArmor + 15232.5)) * 100;
         else if (casterLvl >= 60)
-            dmgDim = (targetArmor / ((465.5 * casterLvl) + targetArmor - 22167.5)) * 100;
+            dmgDim = (newArmor / ((465.5 * casterLvl) + newArmor - 22167.5)) * 100;
         else
-            dmgDim = (targetArmor / ((85 * casterLvl) + targetArmor + 400)) * 100;
+            dmgDim = (newArmor / ((85 * casterLvl) + newArmor + 400)) * 100;
 
         result.append(`<li>Porcentaje de penetración: ${(arpPct * 100).toFixed(2)}%</li>`);
         result.append(`<li>Armadura reducida: ${parseInt(armorRed)}</li>`);
-        result.append(`<li>Armadura efectiva final: ${parseInt(targetArmor - armorRed)}</li>`);
+        result.append(`<li>Armadura efectiva final: ${parseInt(newArmor)}</li>`);
         result.append(`<li>Al final, tu enemigo te disminuye: ${dmgDim.toFixed(2)}%</li>`);
     });
 </script>
