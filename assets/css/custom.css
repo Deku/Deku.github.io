@@ -1,5 +1,5 @@
 h3 > i {
-  font-weight: 0;
+  font-weight: 0 !important;
 }
 
 .text-handwritten {
