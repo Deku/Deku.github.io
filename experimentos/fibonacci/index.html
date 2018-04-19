@@ -1,85 +1,91 @@
 ---
 
 layout: default
-title: Sucesión de Fibonacci
+title: Generador de sonidos con Fibonacci
 
 ---
 
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-10 col-md-offset-1">
-                <h1>Sucesión de Fibonacci</h1>
-                <p>En matemática, la sucesión de Fibonacci (a veces llamada erróneamente serie de Fibonacci) es la siguiente sucesión infinita de números naturales:</p>
-                <blockquote>0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597...</blockquote>
-                <p>A los elementos de esta sucesión se les llama números de Fibonac <p></p>ci. Esta sucesión fue descrita en Europa por Leonardo de Pisa, matemático italiano del siglo XIII también conocido como Fibonacci. Tiene numerosas aplicaciones en ciencias de la computación, matemática y teoría de juegos.</p>
-                <p>La ecuación que define la sucesión es la siguiente:</p>
-                <code>f<small>n</small> = f<small>n-1</small> + f<small>n-2</small></code>
-                <p>Siendo los primeros 2 valores:</p>
-                <code>f<small>0</small> = 0<br/>
-                f<small>1</small> = 1</code>
+<article id="main">
+    <header>
+        <h2>Generador de sonidos con Fibonacci</h2>
+        <p>Un experimento que mezcla la matemática y la música</p>
+    </header>
+    <section class="wrapper style5">
+        <div class="inner">
 
-                <h2>Período de Pisano</h2>
-                <p>En teoría de números, el enésimo perído de Pisano, escrito <i>π(<var>n</var>)</i>, es el período con el cual la secuencia de números de Fibonacci, dado el módulo <var>n</var>, se repite. La existencia de funciones períodicas en los números de Fibonacci fue observada por Joseph Louis Lagrange en 1774</p>
-            </div>
+            <h3>Sucesión de Fibonacci</h3>
+            <p>En matemática, la sucesión de Fibonacci (a veces llamada erróneamente serie de Fibonacci) es la siguiente sucesión infinita de números naturales:</p>
+            <blockquote>0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597...</blockquote>
+            <p>A los elementos de esta sucesión se les llama números de Fibonac <p></p>ci. Esta sucesión fue descrita en Europa por Leonardo de Pisa, matemático italiano del siglo XIII también conocido como Fibonacci. Tiene numerosas aplicaciones en ciencias de la computación, matemática y teoría de juegos.</p>
+            <p>La ecuación que define la sucesión es la siguiente:</p>
+            <code>f<sub>n</sub> = f<sub>n-1</sub> + f<sub>n-2</sub></code>
+            <p>Siendo los primeros 2 valores:</p>
+            <code>f<sub>0</sub> = 0<br/>
+            f<sub>1</sub> = 1</code>
+            
+            <h3>Período de Pisano</h3>
+            <p>En teoría de números, el enésimo perído de Pisano, escrito <i>π(<var>n</var>)</i>, es el período con el cual 
+                la secuencia de números de Fibonacci, dado el módulo <var>n</var>, se repite. La existencia de funciones períodicas en los números de Fibonacci fue observada por Joseph Louis Lagrange en 1774</p>
+        </div>
+    </section>
 
-            <div class="col-xs-12 col-md-10 col-md-offset-1">
-                <h2>Experimento</h2>
-                <p>Utilizando el módulo (resto de la división), transformaremos la sucesión de Fibonacci en una secuencia de notas
-                de una determinada escala musical. El divisor corresponderá a la cantidad de notas en la escala seleccionada.</p>
-                <div class="form-horizontal well">
-                    <div class="form-group">
-                        <label for="cant_numeros" class="control-label col-xs-4">Cantidad de números (1-999)</label>
-                        <div class="col-xs-8">
-                            <input type="number" name="cant_numeros" id="cant_numeros" class="form-control" value="100" min="1" max="999" required="true">
-                        </div>
+    <section class="wrapper style1">
+        <div class="inner">
+            <h3>Experimento</h3>
+            <p>Utilizando el módulo (resto de la división), transformaremos la sucesión de Fibonacci en una secuencia de notas
+            de una determinada escala musical. El divisor corresponderá a la cantidad de notas en la escala seleccionada.</p>
+            
+            <form method="post" action="#">
+                <div class="row uniform">
+                    <div class="12u$">
+                        <label for="cant_numeros">Cantidad de números (1-999)</label>
+                        <input type="number" name="cant_numeros" id="cant_numeros" value="100" min="1" max="999" required="true">
                     </div>
-
-                    <div class="form-group">
-                        <label for="escala" class="control-label col-xs-4">Escala</label>
-                        <div class="col-xs-8">
-                            <select class="form-control" name="escala" id="escala">
-                                <option value="ji_12">Basic just instonation with 7-limit tritone</option>
-                                <option value="harm30">First 30 harmonics and subharmonics</option>
-                                <option value="pyth_31">31-tone Pythagorean scale</option>
-                                <option value="ptolemy">Intense Diatonic Syntonon, also Zarlino's scale</option>
-                                <option value="couperin">Couperin modified meantone</option>
-                                <option value="helmholtz_pure">Helmholtz's two-keyboard harmonium tuning untempered</option>
-                                <option value="partch_43">Harry Partch's 43-tone pure scale</option>
-                                <option value="johnston_81">Ben Johnston's 81-note 5-limit scale of Sonata for Microtonal Piano</option>
-                                <option value="young-lm_piano">LaMonte Young's Well-Tempered Piano</option>
-                                <option value="xenakis_chrom">Xenakis's Byzantine Liturgical mode, 5 + 19 + 6 parts</option>
-                                <option value="slendro">Observed Javanese Slendro scale, Helmholtz/Ellis p. 518, nr.94</option>
-                                <option value="harrison_5">From Lou Harrison, a pelog style pentatonic</option>
-                                <option value="prime_5">What Lou Harrison calls "the Prime Pentatonic", a widely used scale</option>
-                                <option value="malkauns">Mode of Indian Raga Malkauns, inverse of prime_5</option>
-                            </select>
-                        </div>
+                    <div class="12u$">
+                        <label for="escala">Escala</label>
+                        <select class="form-control" name="escala" id="escala">
+                            <option value="ji_12">Basic just instonation with 7-limit tritone</option>
+                            <option value="harm30">First 30 harmonics and subharmonics</option>
+                            <option value="pyth_31">31-tone Pythagorean scale</option>
+                            <option value="ptolemy">Intense Diatonic Syntonon, also Zarlino's scale</option>
+                            <option value="couperin">Couperin modified meantone</option>
+                            <option value="helmholtz_pure">Helmholtz's two-keyboard harmonium tuning untempered</option>
+                            <option value="partch_43">Harry Partch's 43-tone pure scale</option>
+                            <option value="johnston_81">Ben Johnston's 81-note 5-limit scale of Sonata for Microtonal Piano</option>
+                            <option value="young-lm_piano">LaMonte Young's Well-Tempered Piano</option>
+                            <option value="xenakis_chrom">Xenakis's Byzantine Liturgical mode, 5 + 19 + 6 parts</option>
+                            <option value="slendro">Observed Javanese Slendro scale, Helmholtz/Ellis p. 518, nr.94</option>
+                            <option value="harrison_5">From Lou Harrison, a pelog style pentatonic</option>
+                            <option value="prime_5">What Lou Harrison calls "the Prime Pentatonic", a widely used scale</option>
+                            <option value="malkauns">Mode of Indian Raga Malkauns, inverse of prime_5</option>
+                        </select>
                     </div>
-                    <div class="clearfix">
-                        <button type="button" class="btn btn-success pull-right" id="reproducir" onclick="play()">Reproducir</button>
+                    <div class="12u$">
+                        <button type="button" class="button special" id="reproducir" onclick="play()">Reproducir</button>
                     </div>
                 </div>
-                <table id="fibonacci-table" class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Número Fibonacci</th>
-                            <th>Módulo</th>
-                            <th>Resultado</th>
-                        </tr>
-                    </thead>
-                </table>
-                <p>Links:
-                    <ul>
-                        <li><a href="https://es.wikipedia.org/wiki/Sucesi%C3%B3n_de_Fibonacci">Sucesión de Fibonacci (wiki)</a></li>
-                        <li><a href="https://en.wikipedia.org/wiki/Pisano_period">Pisano period (wiki)</a></li>
-                        <li><a href="https://github.com/abbernie/tune">TuneJS (librería para audio en Javascript)</a></li>
-                    </ul>
-                </p>
-                <script type="text/javascript" src="tune.js"></script>
-                <script type="text/javascript" src="app.js"></script>
-            </div>
+            </form>
+            
+            <table id="fibonacci-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Número Fibonacci</th>
+                        <th>Módulo</th>
+                        <th>Resultado</th>
+                    </tr>
+                </thead>
+            </table>
+
+            <h5>Links:</h5>
+            <ul>
+                <li><a href="https://es.wikipedia.org/wiki/Sucesi%C3%B3n_de_Fibonacci">Sucesión de Fibonacci (wiki)</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Pisano_period">Pisano period (wiki)</a></li>
+                <li><a href="https://github.com/abbernie/tune">TuneJS (librería para audio en Javascript)</a></li>
+            </ul>
+
+            <script type="text/javascript" src="tune.js"></script>
+            <script type="text/javascript" src="app.js"></script>
         </div>
-    </div>
-</section>
+    </section>
+</article>

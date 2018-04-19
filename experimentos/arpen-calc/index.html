@@ -5,112 +5,106 @@ title: WoW Arpen Calculator
 
 ---
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<article id="main">
+    <header>
+        <h2>Calculadora de Penetración de Armadura</h2>
+        <p>para World of Warcraft: Wrath of the Lich King</p>
+    </header>
+    <section class="wrapper style5">
+        <div class="inner">
 
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-10 col-md-offset-1">
-                <h1 class="text-handwritten">WoW: Calculadora de Penetración de Armadura</h1>
-                <form id="calc-frm" action="" method="post">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <p class="text-justified">
-                                Al calcular la penetración de armadura, primero deben calcularse los efectos de aquellos debuffs que reducen la armadura del enemigo (Faerie Fire, Sunder Armor, etc.). A la cantidad de armadura resultante se le aplica el cálculo de la penetración de armadura según el rating del atacante, resultando en un porcentaje al cual se le suman los porcentajes obtenidos de talentos como <b>Serrated Blades</b> de pícaro, y auras como <b>Battle Stance</b> de guerrero.
-                            </p>
+            <h3>Calcular ArPen</h3>
+            <blockquote>Al calcular la penetración de armadura, primero deben calcularse los efectos de aquellos debuffs que reducen la armadura del enemigo (Faerie Fire, Sunder Armor, etc.). A la cantidad de armadura resultante se le aplica el cálculo de la penetración de armadura según el rating del atacante, resultando en un porcentaje al cual se le suman los porcentajes obtenidos de talentos como <b>Serrated Blades</b> de pícaro, y auras como <b>Battle Stance</b> de guerrero.</blockquote>
+
+            <form id="calc-frm" action="" method="post">
+                <div class="row">
+                    <div class="6u 12u$(xsmall)">
+                        <div>
+                            <label>Tu nivel:</label>
+                            <input type="number" id="caster_lvl" name="caster_lvl" min="1" max="83" value="1"/>
                         </div>
-                        <div class="col-xs-12 col-md-6">
-                            <div class="form-group">
-                                <label class="control-label">Tu nivel:</label>
-                                <input type="number" id="caster_lvl" name="caster_lvl" class="form-control" min="1" max="83" value="1"/>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">Tu índice de ArPen:</label>
-                                <input type="number" id="caster_arp" name="caster_arp" class="form-control" min="0" value="0"/>
-                                <span class="text-muted">Rating, no porcentaje</span>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <div class="form-group">
-                                <label class="control-label">Nivel del enemigo:</label>
-                                <input type="number" id="target_lvl" name="target_lvl" class="form-control" min="1" max="83" value="1"/>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">Armadura del enemigo:</label>
-                                <input type="number" id="target_armor" name="target_armor" class="form-control" min="0" value="0"/>
-                            </div>
+                        <div>
+                            <label>Tu índice de ArPen:</label>
+                            <input type="number" id="caster_arp" name="caster_arp" min="0" value="0"/>
+                            <span class="text-muted">Rating, no porcentaje</span>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="clearfix">
-                                <input type="submit" name="submit" class="btn btn-success pull-right" value="Calcular"/>
-                            </div>
+                    <div class="6u 12u$(xsmall)">
+                        <div>
+                            <label>Nivel del enemigo:</label>
+                            <input type="number" id="target_lvl" name="target_lvl" min="1" max="83" value="1"/>
+                        </div>
+                        <div>
+                            <label>Armadura del enemigo:</label>
+                            <input type="number" id="target_armor" name="target_armor" min="0" value="0"/>
                         </div>
                     </div>
-                </form>
-                <ul id="result"></ul>
-            </div>
-        </div>
-        <div class="row">
-            <div>
-                <div class="well">
-                    Fuentes:<br>
-                    <a href="http://wowwiki.wikia.com/wiki/Armor_penetration">WoWWiki: Armor Penetration</a><br>
-                    <a href="http://wowwiki.wikia.com/wiki/Damage_reduction">WoWWiki: Damage Reduction</a>
+                    <div class="12u$">
+                        <input type="submit" name="submit" class="button special" value="Calcular"/>
+                    </div>
                 </div>
-            </div>
+            </form>
+
+            <ul id="result"></ul>
+
+            <h5>Fuentes:</h5>
+            <ul>
+                <li><a href="http://wowwiki.wikia.com/wiki/Armor_penetration">WoWWiki: Armor Penetration</a></li>
+                <li><a href="http://wowwiki.wikia.com/wiki/Damage_reduction">WoWWiki: Damage Reduction</a></li>
+            </ul>
         </div>
-    </div>
-</section>
+    </section>
+</article>
 
 <script type="text/javascript">
-    $('#calc-frm').on('submit', (e) => {
-        e.preventDefault();
-        let result = $('#result');
-        result.empty();
-        let casterLvl = parseInt($('#caster_lvl').val());
-        let casterArp = parseInt($('#caster_arp').val());
-        let targetLvl = parseInt($('#target_lvl').val());
-        let targetArmor = parseInt($('#target_armor').val());
-        let arpPct = 0;
-        let armorC = 0;
-        let arpCap = 0;
-        let armorRed = 0;
-        let dmgDim = 0;
+    window.addEventListener("onload", () => {
+        $('#calc-frm').on('submit', (e) => {
+            e.preventDefault();
+            let result = $('#result');
+            result.empty();
+            let casterLvl = parseInt($('#caster_lvl').val());
+            let casterArp = parseInt($('#caster_arp').val());
+            let targetLvl = parseInt($('#target_lvl').val());
+            let targetArmor = parseInt($('#target_armor').val());
+            let arpPct = 0;
+            let armorC = 0;
+            let arpCap = 0;
+            let armorRed = 0;
+            let dmgDim = 0;
 
-        if (casterLvl == 0 || targetLvl == 0)
-        {
-            swal('Alto ahí!', 'El nivel del caster o del enemigo no puede ser 0.', 'error');
-            return;
-        }
+            if (casterLvl == 0 || targetLvl == 0)
+            {
+                swal('Alto ahí!', 'El nivel del caster o del enemigo no puede ser 0.', 'error');
+                return;
+            }
 
-        if (casterLvl >= 80)
-            arpPct = casterArp / 13.99;
-        else if (casterLvl >= 70)
-            arpPct = casterArp / 5.92;
-        else
-            arpPct = casterArp / 3.75;
+            if (casterLvl >= 80)
+                arpPct = casterArp / 13.99;
+            else if (casterLvl >= 70)
+                arpPct = casterArp / 5.92;
+            else
+                arpPct = casterArp / 3.75;
 
-        arpPct /= 100;
-        arpPct = Math.min(arpPct, 1);
-        armorC = targetLvl < 60 ? 400 + 85 * targetLvl : 400 + 85 * targetLvl + 4.5 * 85 * (targetLvl - 59);
-        arpCap = (targetArmor + armorC) / 3;
-        armorRed = Math.min(targetArmor, arpCap) * arpPct;
-        let newArmor = targetArmor - armorRed;
+            arpPct /= 100;
+            arpPct = Math.min(arpPct, 1);
+            armorC = targetLvl < 60 ? 400 + 85 * targetLvl : 400 + 85 * targetLvl + 4.5 * 85 * (targetLvl - 59);
+            arpCap = (targetArmor + armorC) / 3;
+            armorRed = Math.min(targetArmor, arpCap) * arpPct;
+            let newArmor = targetArmor - armorRed;
 
-        if (casterLvl == 83)
-            dmgDim = (newArmor / (newArmor + 16635)) * 100;
-        else if (casterLvl >= 80)
-            dmgDim = (newArmor / (newArmor + 15232.5)) * 100;
-        else if (casterLvl >= 60)
-            dmgDim = (newArmor / ((465.5 * casterLvl) + newArmor - 22167.5)) * 100;
-        else
-            dmgDim = (newArmor / ((85 * casterLvl) + newArmor + 400)) * 100;
+            if (casterLvl == 83)
+                dmgDim = (newArmor / (newArmor + 16635)) * 100;
+            else if (casterLvl >= 80)
+                dmgDim = (newArmor / (newArmor + 15232.5)) * 100;
+            else if (casterLvl >= 60)
+                dmgDim = (newArmor / ((465.5 * casterLvl) + newArmor - 22167.5)) * 100;
+            else
+                dmgDim = (newArmor / ((85 * casterLvl) + newArmor + 400)) * 100;
 
-        result.append(`<li>Porcentaje de penetración: ${(arpPct * 100).toFixed(2)}%</li>`);
-        result.append(`<li>Armadura reducida: ${parseInt(armorRed)}</li>`);
-        result.append(`<li>Armadura efectiva final: ${parseInt(newArmor)}</li>`);
-        result.append(`<li>Al final, tu enemigo te disminuye: ${dmgDim.toFixed(2)}%</li>`);
+            result.append(`<li>Porcentaje de penetración: ${(arpPct * 100).toFixed(2)}%</li>`);
+            result.append(`<li>Armadura reducida: ${parseInt(armorRed)}</li>`);
+            result.append(`<li>Armadura efectiva final: ${parseInt(newArmor)}</li>`);
+            result.append(`<li>Al final, tu enemigo te disminuye: ${dmgDim.toFixed(2)}%</li>`);
+        });
     });
 </script>

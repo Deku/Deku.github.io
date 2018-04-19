@@ -8,4 +8,4 @@ defaults:
       path: ""
       type: "posts"
     values:
-      author: "Deku"
+      author: "José González"
