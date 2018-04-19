@@ -1,3 +1,7 @@
+h3 > i {
+  font-weight: 0;
+}
+
 .text-handwritten {
     font-family: 'Pacifico';
     font-size: 3em;
