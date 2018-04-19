@@ -1690,6 +1690,7 @@
 		input[type="text"]:invalid,
 		input[type="password"]:invalid,
 		input[type="email"]:invalid,
+		input[type="number"]:invalid,
 		select:invalid,
 		textarea:invalid {
 			box-shadow: none;
@@ -1698,6 +1699,7 @@
 		input[type="text"]:focus,
 		input[type="password"]:focus,
 		input[type="email"]:focus,
+		input[type="number"]:focus,
 		select:focus,
 		textarea:focus {
 			box-shadow: 0 0 0 2px #21b2a6;
@@ -1742,6 +1744,7 @@
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
+	input[type="number"],
 	select {
 		height: 2.75em;
 	}
@@ -2684,6 +2687,7 @@
 			.wrapper.style1 input[type="text"],
 			.wrapper.style1 input[type="password"],
 			.wrapper.style1 input[type="email"],
+			.wrapper.style1 input[type="number"],
 			.wrapper.style1 select,
 			.wrapper.style1 textarea {
 				background: rgba(255, 255, 255, 0.075);
@@ -2842,6 +2846,7 @@
 			.wrapper.style3 input[type="text"],
 			.wrapper.style3 input[type="password"],
 			.wrapper.style3 input[type="email"],
+			.wrapper.style3 input[type="number"],
 			.wrapper.style3 select,
 			.wrapper.style3 textarea {
 				background: rgba(255, 255, 255, 0.075);
@@ -3000,6 +3005,7 @@
 			.wrapper.style5 input[type="text"],
 			.wrapper.style5 input[type="password"],
 			.wrapper.style5 input[type="email"],
+			.wrapper.style5 input[type="number"],
 			.wrapper.style5 select,
 			.wrapper.style5 textarea {
 				background: rgba(0, 0, 0, 0.0375);

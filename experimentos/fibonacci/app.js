@@ -17,7 +17,7 @@ echo.connect(vol);
 var changeNote = function() {
     if (rowList.length > 0) {
         var row = rowList.shift();
-        var step = row.innerHTML;
+        var step = row.cells[3].innerText;
         row.style.backgroundColor = "rgba(0,0,0,0.1)";
         var newFreq = tune.note(step);
         osc.frequency.setValueAtTime(newFreq, actx.currentTime);
