@@ -2,7 +2,7 @@
 
 var table = document.getElementById("fibonacci-table");
 var resCache = [];
-var noteCache = [];
+var rowList = [];
 var taskId;
 var tune = new Tune();
 /* WEB AUDIO SETUP */
@@ -15,10 +15,10 @@ vol.gain.value = 0.5;
 echo.connect(vol);
 
 var changeNote = function() {
-    if (noteCache.length > 0) {
-        var cell = noteCache.shift();
-        var step = cell.innerHTML;
-        cell.style.backgroundColor = "#dff0d8";
+    if (rowList.length > 0) {
+        var row = rowList.shift();
+        var step = row.innerHTML;
+        row.style.backgroundColor = "rgba(0,0,0,0.1)";
         var newFreq = tune.note(step);
         osc.frequency.setValueAtTime(newFreq, actx.currentTime);
     } else {
@@ -57,26 +57,27 @@ function play() {
 
     // fill table
     for (var i = 0; i <= limit; i++) {
-        var fila = document.createElement("tr");
-        var celdaN = document.createElement("td");
-        var celdaFib = document.createElement("td");
-        var celdaDiv = document.createElement("td");
-        var celdaMod = document.createElement("td");
+        var row = document.createElement("tr");
+        var cellN = document.createElement("td");
+        var cellFib = document.createElement("td");
+        var cellDiv = document.createElement("td");
+        var cellMod = document.createElement("td");
         var valor = fibonacci(i);
         var modulo = valor % scaleLength;
 
-        celdaN.appendChild(document.createTextNode("(" + i + ")"));
-        celdaFib.appendChild(document.createTextNode(valor));
-        celdaDiv.appendChild(document.createTextNode(scaleLength));
-        celdaMod.appendChild(document.createTextNode(modulo));
-        noteCache.push(celdaMod);
+        cellN.appendChild(document.createTextNode("(" + i + ")"));
+        cellFib.appendChild(document.createTextNode(valor));
+        cellDiv.appendChild(document.createTextNode(scaleLength));
+        cellMod.appendChild(document.createTextNode(modulo));
+        
+        row.appendChild(cellN);
+        row.appendChild(cellFib);
+        row.appendChild(cellDiv);
+        row.appendChild(cellMod);
 
-        fila.appendChild(celdaN);
-        fila.appendChild(celdaFib);
-        fila.appendChild(celdaDiv);
-        fila.appendChild(celdaMod);
+        rowList.push(row);
 
-        table.appendChild(fila);
+        table.appendChild(row);
     }
 
     // start playing notes
@@ -92,7 +93,7 @@ function play() {
 function stopPlaying() {
     osc.stop();
     clearInterval(taskId);
-    noteCache = [];
+    rowList = [];
     osc = undefined;
     taskId = undefined;
     document.getElementById("reproducir").innerHTML = "Reproducir";
