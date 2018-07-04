@@ -14,6 +14,14 @@ h3 > i.fa {
   margin: 0 0 0 0;
 }
 
+.spotlight:nth-child(1) {
+    background-color: #4c5c96;
+}
+
+.spotlight:nth-child(2) {
+    background-color: #45558d;
+}
+
 /************************************
 ************ANIMATIONS***************
 ************************************/
