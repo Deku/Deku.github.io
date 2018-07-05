@@ -31,15 +31,16 @@ window.onload = function () {
  * Main menu
  *
  */
-var titleState = function (game) {};
-
-titleState.prototype = {
-    WebFontConfig: {
+var titleState = function (game) {
+    this.WebFontConfig = {
         active: function() { game.time.events.add(Phaser.Timer.SECOND, create, this); },
         google: {
             families: ['Caveat Brush']
         }
-    },
+    };
+};
+
+titleState.prototype = {
     preload: function() {
         game.load.image('background','assets/background.png');
         game.load.image('button', 'assets/buttonLong_brown.png');
