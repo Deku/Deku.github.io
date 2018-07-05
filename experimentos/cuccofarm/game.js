@@ -49,10 +49,10 @@ titleState.prototype = {
         var background = game.add.tileSprite(0, 0, _width, _height, 'background');
         background.tileScale = new PIXI.Point(_scale, _scale);
         
-        line1 = game.add.text(game.world.centerX, game.world.centerY, "Cucco", {font: "10rem Pacifico", fill: "#fff", align: "center"});
+        line1 = game.add.text(game.world.centerX, game.world.centerY, "Cucco", {font: "10rem Caveat Brush", fill: "#fff", align: "center"});
         line1.anchor.set(0.5);
         
-        line2 = game.add.text(game.world.centerX, game.world.centerY + scaled(40), "Farm", {font: "5rem Pacifico", fill: "#fff", align: "center"});
+        line2 = game.add.text(game.world.centerX, game.world.centerY + scaled(40), "Farm", {font: "5rem Caveat Brush", fill: "#fff", align: "center"});
         line2.anchor.set(0.5);
 
         versionText = game.add.text(game.world.width - 10, game.world.height - 10, "v" + version, {font: "14px Arial", fill: "#fff", align: "right"});
