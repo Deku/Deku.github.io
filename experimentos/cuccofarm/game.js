@@ -34,9 +34,16 @@ window.onload = function () {
 var titleState = function (game) {};
 
 titleState.prototype = {
+    WebFontConfig: {
+        active: function() { game.time.events.add(Phaser.Timer.SECOND, create, this); },
+        google: {
+            families: ['Caveat Brush']
+        }
+    },
     preload: function() {
         game.load.image('background','assets/background.png');
         game.load.image('button', 'assets/buttonLong_brown.png');
+        game.load.script('webfont', '//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js');
     },
     create: function () {
         var line1;
