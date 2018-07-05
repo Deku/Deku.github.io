@@ -1,8 +1,9 @@
-h3 > i.fab,
-h3 > i.far,
-h3 > i.fas,
-h3 > i.fa {
+h3 > i.fab, h3 > i.far, h3 > i.fas, h3 > i.fa {
   font-weight: 100 !important;
+}
+
+small {
+    font-size: .7em;
 }
 
 .text-handwritten {

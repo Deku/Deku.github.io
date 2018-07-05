@@ -82,3 +82,42 @@ layout: default
         </ul>
     </div>
 </section>
+
+<section id="contacto">
+    <div class="inner">
+        <header>
+            <h2>Hablemos</h2>
+            <p>No todo debe ser negocios, también puedo orientarte en algunos temas de tu interés.</p>
+        </header>
+        <form method="POST" action="https://formspree.io/hola.jgonzalez@gmail.com">
+            <div class="row">
+                <div class="col-12">
+                    <input name="email" placeholder="Tu correo" type="email" required/>
+                </div>
+                <div class="col-12">
+                    <input name="nombre" placeholder="Tu nombre" type="text" required/>
+                </div>
+                <div class="col-12">
+                    <input name="fono" placeholder="Tu número de teléfono (opcional)" type="tel"/>
+                </div>
+                <div class="col-12">
+                    <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+                </div>
+                <div class="col-12">
+                    <input type="hidden" name="_subject" value="Contacto desde página web" />
+                    <input type="hidden" name="_language" value="es" />
+                    <input type="text" name="_gotcha" style="display:none" />
+                    <ul class="actions">
+                        <li><button class="primary" type="submit">Enviar</button></li>
+                        <li><button type="reset">Borrar</button></li>
+                    </ul>
+                </div>
+                <div class="col-12">
+                    <small>La información aquí entregada será utilizada única y exclusivamente para establecer un contacto. Los correos
+                        son enviados gracias a los servicios de <a href="https://formspree.io/">Formspree.io</a>.
+                    </small>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
