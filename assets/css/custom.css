@@ -2,8 +2,16 @@ h3 > i.fab, h3 > i.far, h3 > i.fas, h3 > i.fa {
   font-weight: 100 !important;
 }
 
+input, textarea {
+    margin-bottom: 1vw;
+}
+
 small {
     font-size: .7em;
+}
+
+#menu {
+    background-color: #3b444e;
 }
 
 .text-handwritten {
