@@ -12,21 +12,6 @@ var MAXHEIGHT = 672;
 
 function scaled(number) { return number * _scale; }
 
-window.onload = function () {
-    var container = document.getElementById('game-container');
-    _width = (container.offsetWidth > MAXWIDTH ? MAXWIDTH : container.offsetWidth);
-    _height = parseInt((_width / MAXWIDTH) * MAXHEIGHT);
-    _scale = _width / MAXWIDTH;
-    console.debug(_width, _height, _scale);
-   
-    game = new Phaser.Game(_width, _height, Phaser.AUTO, container);
-    game.state.add("Title", titleState);
-    game.state.add("PlayGame", gameState);
-    game.state.add("GameOver", gameOverState);
-
-    game.state.start("Title");
-}
-
 /*
  * Main menu
  *
@@ -398,4 +383,18 @@ gameOverState.prototype = {
             );
         buttonText.anchor.set(0.5);
     }
+}
+
+window.onload = function () {
+    var container = document.getElementById('game-container');
+    _width = (container.offsetWidth > MAXWIDTH ? MAXWIDTH : container.offsetWidth);
+    _height = parseInt((_width / MAXWIDTH) * MAXHEIGHT);
+    _scale = _width / MAXWIDTH;
+   
+    game = new Phaser.Game(_width, _height, Phaser.AUTO, container);
+    game.state.add("Title", titleState);
+    game.state.add("PlayGame", gameState);
+    game.state.add("GameOver", gameOverState);
+
+    game.state.start("Title");
 }
